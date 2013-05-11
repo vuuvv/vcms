@@ -1,0 +1,45 @@
+﻿@model List<vuuvv.web.Helper.Node<vuuvv.web.Models.WebPage>>
+
+<div class="top_links">
+	<span class="current_site">
+		<b>中文</b>
+	</span>
+	<span class="links_pipe">|</span>
+	<a href="http://www.joyou.de">德文</a>
+	<span class="links_pipe">|</span>
+	<a href="http://www.joyou.com">英文</a>
+	<span class="links_pipe">|</span>
+	<a href="#">网站地图</a>
+</div>
+<a href="/" class="logobox"></a>
+<div class="header_search_box" id="header_search_box">
+	<form id="search_form" action="/search">
+		<input class="no-outline" type="text" max-length="40" value="" title="搜索文本框" name="q" />
+		<a class="btn search_bar_submit" id="search_button" href="javascript:;" title="搜索按钮"></a>
+	</form>
+</div>
+<div id="wb_connect_btn" style="position: absolute; top: 25px; left:250px;"></div>
+<script>
+    WB2.anyWhere(function (W) {
+        W.widget.connectButton({
+            id: "wb_connect_btn",
+            type: '3,2',
+            callback: {
+                login: function (o) {
+                    alert("login: " + o.screen_name)
+                },
+                logout: function () {
+                    alert('logout');
+                }
+            }
+        });
+    });
+</script>
+<div class="main_nav">
+	<ul class="main_menu clearfix">
+        @foreach (var nav in @Model)
+        {
+            @Html.Partial("NavItem", nav)
+        }
+	</ul>
+</div>

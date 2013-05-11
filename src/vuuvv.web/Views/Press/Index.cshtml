@@ -1,0 +1,117 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@foreach (Tuple<vuuvv.web.Models.PressCategory, List<vuuvv.web.Models.Press>> tuple in ViewBag.latest)
+{
+<div class="box news-box">
+	<div class="box-title">
+		<div class="box-title-inner sl-linear">
+			<a href="@Url.Action("index", "Press", new { category = tuple.Item1.Slug })">
+			<h3>@tuple.Item1.Name</h3>
+			</a>
+		</div>
+	</div>
+	<div class="box-container">
+		<ul class="box-horizontal clearfix">
+            @foreach (var article in @tuple.Item2) {
+			<li>
+				<a href="@Url.Action("detail", "Press", new { id = article.Id })" class="gallery-cell">
+					<div class="gallery-cell-img">
+						<img src="@article.Thumbnail" title="@article.Title" alt="@article.Title" />
+					</div>
+					<div class="gallery-cell-desc">
+						@article.Title
+					</div>
+				</a>
+			</li>
+            }
+		</ul>
+	</div>
+</div>
+}
+<div class="box news-box">
+	<div class="box-title">
+		<div class="box-title-inner sl-linear">
+			<h3>品牌动态</h3>
+		</div>
+	</div>
+	<div class="box-container">
+		<ul class="box-horizontal clearfix">
+			<li>
+				<a href="#" class="gallery-cell">
+					<div class="gallery-cell-img">
+						<img src="/static/img/brand_2_t.jpg" alt="" />
+					</div>
+					<div class="gallery-cell-desc">
+						中宇品质秀
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="gallery-cell">
+					<div class="gallery-cell-img">
+						<img src="/static/img/brand_1_t.jpg" alt="" />
+					</div>
+					<div class="gallery-cell-desc">
+						德国上市
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="gallery-cell no-outline">
+					<div class="gallery-cell-img">
+						<img src="/static/img/brand_3_t.jpg" alt="" />
+					</div>
+					<div class="gallery-cell-desc">
+						亮相世博
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="box news-box">
+	<div class="box-title">
+		<div class="box-title-inner sl-linear">
+			<a href="@Url.Action("magzine", "Press")">
+			<h3>中宇有我</h3>
+			</a>
+		</div>
+	</div>
+	<div class="box-container">
+		<ul class="box-horizontal clearfix">
+            @foreach(vuuvv.web.Models.Magzine magzine in ViewBag.magzines) 
+            {
+                <li>
+                    <a href="@magzine.Flash" class="gallery-cell magzine-cell" title="@magzine.Name" alt="@magzine.Name">
+                        <div class="gallery-cell-img">
+                            <img src="/static/media/@magzine.Thumbnail" alt="@magzine.Name" title="@magzine.Name" />
+                        </div>
+                        <div class="gallery-cell-desc">
+                            @magzine.Name
+                        </div>
+                    </a>
+                </li>
+            }
+		</ul>
+	</div>
+</div>
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/news.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

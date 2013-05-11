@@ -1,0 +1,25 @@
+﻿@model vuuvv.web.Models.ViewModel.UploadFileModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Editor.cshtml";
+}
+
+
+<script type="text/javascript" charset="utf-8">
+    window.UEDITOR_HOME_URL = "/static/lib/ueditor/";
+</script>
+<script type="text/javascript" src="/static/lib/ueditor/editor_config.js"></script>
+<script type="text/javascript" src="/static/lib/ueditor/editor_all.js"></script> 
+<textarea name="后台取值的key" id="myEditor">这里写你的初始化内容</textarea>
+<script type="text/javascript">
+    var editor = new UE.ui.Editor();
+    editor.render("myEditor");
+    //1.2.4以后可以使用一下代码实例化编辑器
+    //UE.getEditor('myEditor')
+</script> 
+
+@*{
+<script src="/static/js/pixlr.js" type="text/javascript"></script>
+<a href="javascript:pixlr.overlay.show({image:'', title:'Example image 2', target:'http://@(Request.ServerVariables["Remote_Addr"]):@(Request.ServerVariables["Server_Port"])/admin/adminupload', service:'express'});">show image</a>
+}*@

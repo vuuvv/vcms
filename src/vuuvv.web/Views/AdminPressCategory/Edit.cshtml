@@ -1,0 +1,51 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model PressCategory
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="/manage/adminpresscategory/">新闻类别列表</a>
+			</li>
+			<li>
+				<a href="/manage/adminpresscategory/create">创建新闻类别</a>
+			</li>
+			<li class="active">
+				<a href="javascript:void(0);">@Model.Name</a>
+			</li>
+		</ul>
+		<div class="tab-content form-horizontal">
+			<div class="tab-pane active in">
+@using (Html.BeginForm())
+{
+                @Html.ValidationSummary(true)
+                <div class="control-group">
+                    <label class="control-label" for="Name">名称</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">Slug</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Slug)
+                    @Html.ValidationMessageFor(model => model.Slug)
+                    </div>
+                </div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary">保存</button>
+					</div>
+                </div>
+                @Html.HiddenFor(model => model.Id)
+}
+
+			</div>
+		</div>
+	</div>
+</div>

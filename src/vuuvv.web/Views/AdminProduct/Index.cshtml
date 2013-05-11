@@ -1,0 +1,62 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Helper;
+@using vuuvv.web.Models;
+@model Pager<Product>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="/manage/adminproduct/">产品列表</a>
+			</li>
+			<li>
+				<a href="/manage/adminproduct/create">创建</a>
+			</li>
+		</ul>
+<form action="/manage/adminproduct/delete" method="post">
+		<div class="tab-content">
+			<div class="tab-pane active in">
+				<div class="well">
+					<table class="table">
+						<thead>
+							<tr>
+                                <th>删除</th>
+                                <th>Id</th>
+                                <th>类型</th>
+								<th>型号</th>
+								<th>名称</th>
+                                <th></th>
+							</tr>
+						</thead>
+						<tbody>
+@foreach (var item in Model.Items)
+{
+							<tr>
+                                <td><input type="checkbox" value="@item.Id" id="id" name="ids"></td>
+								<td>@Html.DisplayFor(modelItem => item.Id)</td>
+								<td>@Html.DisplayFor(modelItem => item.CategoriesName)</td>
+								<td>@Html.DisplayFor(modelItem => item.Sku)</td>
+								<td>@Html.DisplayFor(modelItem => item.Name)</td>
+								<td>
+                                    @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                                    <a href="/manage/adminproduct/Delete/@item.Id" onclick="return confirm('确定要删除吗？');">删除</a>
+                                </td>
+							</tr>
+}
+						</tbody>
+					</table>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">删除</button>
+                        </div>
+                    </div>
+                </div>
+                @Html.Partial("Pager", Model)
+			</div>
+		</div>
+</form>
+	</div>
+</div>

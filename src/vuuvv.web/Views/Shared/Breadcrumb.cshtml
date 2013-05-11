@@ -1,0 +1,14 @@
+﻿@model List<vuuvv.web.Helper.Node<vuuvv.web.Models.WebPage>>
+
+<a href="/">首页</a>
+@for(int i = 0; i < @Model.Count; i++)
+{
+    if (i == @Model.Count - 1)
+    {
+        @: <em>@Model.ElementAt(i).Data.Title</em>
+    }
+    else
+    {
+        @: <a href="/@Model.ElementAt(i).Data.Url">@Model.ElementAt(i).Data.Title</a>
+    }
+}

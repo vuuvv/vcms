@@ -1,0 +1,73 @@
+﻿.house
+{
+	background-image: url(icons/house.png) !important;
+}
+.application_form
+{
+	background-image: url(icons/application_form.png) !important;
+}
+.plugin
+{
+	background-image: url(icons/plugin.png) !important;
+}
+.locked
+{
+	background-image: url(locked.gif) !important;
+}
+.google
+{
+	background-image: url(google-chrome.png) !important;
+}
+.ie
+{
+	background-image: url(ie.png) !important;
+}
+.group
+{
+	background-image: url(icons/group.png) !important;
+}
+.bricks
+{
+	background-image: url(icons/bricks.png) !important;
+}
+.folder_user
+{
+	background-image: url(icons/folder_user.png) !important;
+}
+.book
+{
+	background-image: url(icons/book.png) !important;
+}
+.user_gray
+{
+	background-image: url(icons/user_gray.png) !important;
+}
+
+.tag_blue_add
+{
+	background-image: url(icons/tag_blue_add.png) !important;
+}
+.tag_blue
+{
+	background-image: url(icons/tag_blue.png) !important;
+}
+.tag_blue_delete
+{
+	background-image: url(icons/tag_blue_delete.png) !important;
+}
+.tag_blue_edit
+{
+	background-image: url(icons/tag_blue_edit.png) !important;
+}
+.tag_red
+{
+	background-image: url(icons/tag_red.png) !important;
+}
+.cog
+{
+	background-image: url(icons/cog.png) !important;
+}
+.disconnect
+{
+	background-image: url(icons/disconnect.png) !important;
+}

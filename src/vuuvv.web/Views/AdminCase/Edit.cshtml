@@ -1,0 +1,95 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model Case
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="/manage/admincase/">工程案例列表</a>
+			</li>
+			<li>
+				<a href="/manage/admincase/create">创建</a>
+			</li>
+            <li class="active">
+                <a href="javascript: void(0);">@Model.Name</a>
+            </li>
+		</ul>
+		<div class="tab-content form-horizontal">
+			<div class="tab-pane active in">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+                <div class="control-group">
+                    <label class="control-label" for="CategoryId">类别</label>
+                    <div class="controls">
+                    @Html.DropDownList("CategoryId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.CategoryId)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Name">名称</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Image">图片</label>
+                    <div class="controls">
+                        <div class="uploader" target="#Image" url="/manage/adminupload?path=sales/case" mode="nomedia"></div>
+                        <input type="hidden" id="Image" name="Image" value="@Model.Image"/>
+                        @Html.ValidationMessageFor(model => model.Image)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Ordering">序号</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Ordering)
+                    @Html.ValidationMessageFor(model => model.Ordering)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Active">有效</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Active)
+                    @Html.ValidationMessageFor(model => model.Active)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Description">描述</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">创建时间</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.CreatedDate, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.CreatedDate)
+                    </div>
+                </div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary">保存</button>
+					</div>
+                </div>
+}
+
+			</div>
+		</div>
+	</div>
+</div>
+<link media="all" rel="stylesheet" href="/static/js/libs/artdialog/skins/default.css" type="text/css" />
+<script src="/static/js/jquery.html5uploader.js" type="text/javascript"></script>
+<script src="/static/js/libs/artdialog/jquery.artDialog.js" type="text/javascript"></script>
+<script src="/static/js/upload.js" type="text/javascript"></script>
+<script type="text/javascript">
+    new Uploader({
+        container: ".uploader"
+    });
+</script>

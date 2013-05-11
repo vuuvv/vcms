@@ -1,0 +1,139 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model Press
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="/static/lib/ueditor/editor_config.js" type="text/javascript"></script>
+<script src="/static/lib/ueditor/editor_all_min.js" type="text/javascript"></script>
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="/manage/adminpress/">新闻列表</a>
+			</li>
+			<li>
+				<a href="/manage/adminpress/create">创建新闻</a>
+			</li>
+            <li class="active">
+                <a href="javascript: void(0);">@Model.Title</a>
+            </li>
+		</ul>
+		<div class="tab-content form-horizontal">
+			<div class="tab-pane active in">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+                <div class="control-group">
+                    <label class="control-label" for="Name">类型</label>
+                    <div class="controls">
+                    @Html.DropDownList("CategoryId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Name">标题</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.Title, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">副标题</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.SubTitle, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.SubTitle)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">作者</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.Author, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.Author)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">来源</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.PressFrom, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.PressFrom)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">概述</label>
+                    <div class="controls">
+                    @Html.TextAreaFor(model => model.Summary, new { @class = "input-xxlarge"})
+                    @Html.ValidationMessageFor(model => model.Summary)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">内容</label>
+                    <div class="controls">
+                    @Html.TextAreaFor(model => model.Content, new { @class = "input-xxlarge", id = "editor"})
+                    @Html.ValidationMessageFor(model => model.Content)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">缩略图</label>
+                    <div class="controls">
+                    <div class="uploader" target="#Thumbnail" url="/manage/adminupload?path=press"></div>
+                    <input type="hidden" id="Thumbnail" name="Thumbnail" value="@Model.Thumbnail"/>
+                    @Html.ValidationMessageFor(model => model.Thumbnail)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">有效</label>
+                    <div class="controls">
+                    @Html.CheckBoxFor(model => model.Active)
+                    @Html.ValidationMessageFor(model => model.Active)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="TopOrder">置顶</label>
+                    <div class="controls">
+                    @(Html.EditorFor(model => model.TopOrder))(数值越大，排得越前)
+                    @Html.ValidationMessageFor(model => model.TopOrder)
+                    </div>
+                </div>
+                 <div class="control-group">
+                    <label class="control-label" for="Slug">标签</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.Tags, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.Tags)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">创建时间</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.CreatedDate, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.CreatedDate)
+                    </div>
+                </div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary" id="submit">保存</button>
+                        @Html.HiddenFor(model => model.Id)
+					</div>
+                </div>
+}
+
+			</div>
+		</div>
+	</div>
+</div>
+<link media="all" rel="stylesheet" href="/static/js/libs/artdialog/skins/default.css" type="text/css" />
+<script src="/static/js/jquery.html5uploader.js" type="text/javascript"></script>
+<script src="/static/js/libs/artdialog/jquery.artDialog.js" type="text/javascript"></script>
+<script src="/static/js/upload.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var upload_url = "/manage/adminupload?path=press";
+    var options = {
+        imageUrl: upload_url,
+        imagePath: ""
+    };
+    var ue = UE.getEditor("editor", options);
+    new Uploader({
+        container: ".uploader"
+    });
+</script>

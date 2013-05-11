@@ -1,0 +1,74 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@{
+    var page = (RenderPage)Model;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="keywords" content="中宇卫浴,中宇,龙头,淋浴柱,花洒,陶瓷,洁具,浴室柜,浴缸,浴室挂件,感应产品,五金配件,卫浴,中宇建材集团有限公司" />
+	<meta name="description" content="中宇建材集团有限公司位于海峡西岸经济区内的古城泉州，是中国最大的卫浴水暖产品及配件制造商之一，也是亚洲最具规模的水龙头及铜阀门配件出口企业之一，同时是中国卫浴水暖产品多项国家标准主要起草单位。" />
+	<title>@page.Title | 中宇卫浴-JOYOU</title>
+	<link rel="shortcut icon" href="/static/img/favicon.ico">
+	<link media="all" rel="stylesheet" href="/static/css/base.css" type="text/css" />
+	<link media="all" rel="stylesheet" href="/static/css/main.css" type="text/css" />
+    @RenderSection("ExtraCSS")
+	<script type="text/javascript" src="/static/js/libs/jquery/1.7.2/jquery-min.js"></script>
+    <script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3138542123" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="/static/js/nav.js"></script>
+    @RenderSection("ExtraJS")
+    @RenderSection("ExtraHead")
+</head>
+<body>
+	<div class="container_overlay">
+		<div class="container">
+			<div class="header">
+            @Html.Partial("Header", page.Roots)
+			</div>
+			<div class="page">
+                @RenderSection("Banner")
+                <div class="clearfix" style="margin-top: 15px">
+                @if (page.Page.Data.Col == 0)
+                {
+                    @RenderBody()
+                }
+                else if (page.Page.Data.Col == 1)
+                {
+                    <div>
+                        <div class="toolbox">
+                            <div class="breadcrumb">
+                                @Html.Partial("Breadcrumb", page.Ancestors)
+                            </div>
+                        </div>
+                        <div class="content">
+                            @RenderBody()
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="column-1">
+                        @Html.Partial("Sidebar", page.Sidebar)
+                    </div>
+                    <div class="column-2">
+                        <div class="toolbox">
+                            <div class="breadcrumb">
+                                @Html.Partial("Breadcrumb", page.Ancestors)
+                            </div>
+                        </div>
+                        <div class="content">
+                            @RenderBody()
+                        </div>
+                    </div>
+                }
+                </div>
+			</div>
+			<div class="footer">
+            @Html.Partial("Footer")
+			</div>
+		</div>
+	</div>
+    @RenderSection("Overlay")
+</body>
+</html>

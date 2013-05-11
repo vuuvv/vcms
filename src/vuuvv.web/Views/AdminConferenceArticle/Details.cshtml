@@ -1,0 +1,55 @@
+﻿@model vuuvv.web.Models.ConferenceArticle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ConferenceArticle</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Column.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Column.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section Sidebar {
+}
+
+@section ContentHeader {
+}
+
+@section Breadcrumb {
+}
+
+@section Footer {
+}

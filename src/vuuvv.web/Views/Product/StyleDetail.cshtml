@@ -1,0 +1,41 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Models.Style style = ViewBag.style; 
+}
+
+<div class="serial-view clearfix">
+	<div class="serial-pic">
+		<img  id="serial_pic" src="/static/media/@style.Images[0].Image" alt="" />
+	</div>
+	<div class="serial-desc">
+		<h2>@style.Name</h2>
+		<p>@style.Summary</p>
+	</div>
+</div>
+<div class="box">
+	<div class="box-title">
+		<div class="box-title-inner sl-linear">
+			<h3>产品列表</h3>
+		</div>
+		<div class="box-container">
+		</div>
+	</div>
+</div>
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/product.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

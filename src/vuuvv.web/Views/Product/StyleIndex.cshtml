@@ -1,0 +1,44 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Models.StyleCategory category = ViewBag.category; 
+    List<vuuvv.web.Models.Style> styles = category.Styles.ToList();
+}
+
+<ul class="serials list-horizontal">
+    @for (int i = 0; i < styles.Count; i++)
+    { 
+        if (i % 3 == 2)
+        {
+        @: <li class="last">
+        }
+        else
+        {
+        @: <li>
+        }
+		<a href="/product/style/detail/@styles[i].Slug">
+			<img src="/static/media/@(styles[i].Images[0].Thumbnail)">
+		</a>
+		<h5>@styles[i].Name</h5>
+		<p>@styles[i].Summary</p>
+    @: </li>
+    }
+</ul>
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/product.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

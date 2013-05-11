@@ -1,0 +1,32 @@
+﻿<div class="pagination clearfix"><!--Pager -->
+    @if (Model.Min != Model.Max) 
+    {
+        if (Model.Min > 1) 
+        {
+	@: <a href="@Model.FirstPageUrl" class="pager pager-first">首页</a>
+        }
+        if (Model.Page > 1)
+        {
+	@: <a href="@Model.PageUrl(Model.Page - 1)" class="pager">上一页</a>
+        }
+        for (int i = Model.Min; i <= Model.Max; i++)
+        {
+            if (i == Model.Page)
+            {
+	@: <a class="pager pager-active">@i</a>
+            }
+            else 
+            {
+	@: <a href="@Model.PageUrl(i)" class="pager">@i</a>
+            }
+        }
+        if (Model.Page < @Model.Paginator.PageCount) 
+        {
+	@: <a href="@Model.PageUrl(Model.Page + 1)" class="pager">下一页</a>
+        }
+        if (Model.Max < @Model.Paginator.PageCount)
+        {
+	@: <a href="@Model.LastPageUrl" class="pager">末页</a>
+        }
+    }
+</div>

@@ -1,0 +1,292 @@
+html, body {
+	height: 100%;
+	font-size: 12px;
+	font-family: arial, sans-serif;
+	background: #fff;
+	overflow: hidden;
+}
+
+a {
+	color: #148fd4;
+	text-decoration: none;
+}
+
+input, textarea {
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+}
+
+img {
+	border: none;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.vui-dashboard {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.vui-dashboard-header {
+	height: 45px;
+	border-bottom: 1px solid #009ae2;
+	background: #f5f5f5;
+	text-shadow: 0 1px 0 #fff;
+	box-shadow: 0 1px 0 #dcecf3;
+	background: -webkit-linear-gradient(top, #f5f5f5, #f2f2f2);
+	background: -moz-linear-gradient(top, #f5f5f5, #f2f2f2);
+}
+
+.vui-dashboard-body {
+	position: absolute;
+	width: 100%;
+	top: 46px;
+	bottom: 0;
+	_height: expression(document.body.clientHeight - 46);
+}
+
+.vui-dashboard-sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100%;
+	background: #f8f8f8;
+	border-right: 1px solid #d2d2d2;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.vui-dashboard-content {
+	position: absolute;
+	top: 0;
+	left: 201px;
+	right: 0;
+	height: 100%;
+}
+
+.vui-sidebar-header {
+	background: #f5f5f5;
+	border-bottom: 1px solid #dedede;
+	height: 28px;
+	padding: 6px 10px 6px 15px;
+}
+
+.vui-sidebar-header .vui-blue-button {
+	margin-right: -1px;
+}
+
+.vui-sidebar-header .vui-blue-button .vui-button-state {
+	padding: 5px 3px;
+	width: 77px;
+}
+
+.vui-sidebar-header .vui-blue-button .vui-state-hover {
+	box-shadow: 0 0 2px #148fd4;
+}
+
+.vui-sidebartree-root {
+	position: relative;
+}
+
+.vui-sidebartree-root-label, .vui-sidebartree-label {
+	color: #3a3a3a;
+	cursor: pointer;
+	display: block;
+	line-height: 22px;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.vui-sidebartree-root-label {
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #efefef;
+	box-shadow: 0 1px 0 #fff;
+	font-weight: bold;
+}
+
+.vui-sidebartree-root-label span {
+	padding: 5px 15px 5px 35px;
+}
+
+.vui-sidebartree-label {
+	padding-left: 47px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.vui-sidebartree-label:hover {
+	background: #e5effa;
+	color: #2a2a2a;
+}
+
+.vui-sidebartree ul {
+	border-bottom: 1px solid #efefef;
+	box-shadow: 0 1px 0 #fff;
+	display: none;
+}
+
+.expanded ul {
+	display: block;
+}
+
+.vui-sidebartree .vui-icon {
+	position: absolute;
+	display: block;
+	left: 16px;
+	top: 5px;
+}
+
+.vui-sidebartree .icon-arrow-right {
+	cursor: pointer;
+	background-position: -63px -30px;
+	height: 22px;
+	width: 15px;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+}
+
+.expanded .icon-arrow-right {
+	transition:all 0.3s ease-in-out;
+	transform:rotate(45deg);
+	transform-origin:50% 50%;
+	-webkit-transition:all 0.3s ease-in-out;
+	-webkit-transform:rotate(45deg);
+	-webkit-transform-origin:50% 50%;
+	-moz-transition:all 0.3s ease-in-out;
+	-moz-transform:rotate(45deg);
+	-moz-transform-origin:50% 50%;
+	-o-transition:all 0.3s ease-in-out;
+	-o-transform:rotate(45deg);
+	-o-transform-origin:50% 50%;
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.707, M12=-0.707, M21=0.707, M22=0.707, SizingMethod='auto expand');
+	left: 13px\0;
+	top: 2px\0;
+}
+
+.vui-dashboard-content .vui-tabview {
+	margin: 6px 0 0 6px;
+}
+
+.vui-notify {
+	position: absolute;
+	top: 5px;
+	text-align: center;
+
+	font-weight: bold;
+	display: none;
+	padding: 6px 35px 6px 14px;
+	color: #c09853;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5)
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+		 -moz-border-radius: 4px;
+			  border-radius: 4px;
+}
+
+.vui-notify-heading {
+	color: inherit;
+}
+
+.vui-notify .close {
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	line-height: 18px;
+}
+
+.notify-success {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.notify-danger,
+.notify-error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+}
+
+.notify-info {
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.vui-notify-block {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+.vui-notify-text {
+	white-space: nowrap;
+}
+
+.vui-notify button.close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.vui-notify .close {
+	display: block;
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: 18px;
+	line-height: 18px;
+	color: #000000;
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+}
+
+.vui-notify .close:hover {
+	color: #000000;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+}
+
+.vui-table-header {
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 100%;
+	border-bottom: 1px solid #cdcccd;
+}
+
+.vui-table-header td {
+	background: url(img/table_header_bg.png) no-repeat 0 0 #eff1f4;
+	cursor: pointer;
+	height: 22px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.vui-table-header .vui-table-check {
+	background-position: -4px 0;
+	width: 25px;
+}
+
+.vui-table-header td span {
+	line-height: 22px;
+	padding: 0 5px;
+}
+

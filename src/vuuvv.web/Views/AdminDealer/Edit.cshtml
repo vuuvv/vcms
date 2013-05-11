@@ -1,0 +1,129 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model Dealer
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="/manage/admindealer/">经销商</a>
+			</li>
+			<li>
+				<a href="/manage/admindealer/create">创建</a>
+			</li>
+            <li class="active">
+                <a href="javascript: void(0);">@Model.Name</a>
+            </li>
+		</ul>
+		<div class="tab-content form-horizontal">
+			<div class="tab-pane active in">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+                <div class="control-group">
+                    <label class="control-label" for="AreaId">区域</label>
+                    <div class="controls">
+                    @Html.DropDownList("AreaId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.AreaId)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Name">名称</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Address">地址</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Contact">联系人</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Contact)
+                    @Html.ValidationMessageFor(model => model.Contact)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Mobile">手机</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Mobile)
+                    @Html.ValidationMessageFor(model => model.Mobile)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Tel">电话</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Tel)
+                    @Html.ValidationMessageFor(model => model.Tel)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Fax">传真</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Fax)
+                    @Html.ValidationMessageFor(model => model.Fax)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Website">网站</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Website)
+                    @Html.ValidationMessageFor(model => model.Website)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Zipcode">邮编</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Zipcode)
+                    @Html.ValidationMessageFor(model => model.Zipcode)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="longitude">经度</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.longitude)
+                    @Html.ValidationMessageFor(model => model.longitude)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="latitude">纬度</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.latitude)
+                    @Html.ValidationMessageFor(model => model.latitude)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">有效</label>
+                    <div class="controls">
+                    @Html.CheckBoxFor(model => model.Active)
+                    @Html.ValidationMessageFor(model => model.Active)
+                    </div>
+                </div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary">保存</button>
+					</div>
+                </div>
+}
+
+			</div>
+		</div>
+	</div>
+</div>
+<link media="all" rel="stylesheet" href="/static/js/libs/artdialog/skins/default.css" type="text/css" />
+<script src="/static/js/jquery.html5uploader.js" type="text/javascript"></script>
+<script src="/static/js/libs/artdialog/jquery.artDialog.js" type="text/javascript"></script>
+<script src="/static/js/upload.js" type="text/javascript"></script>
+<script type="text/javascript">
+    new Uploader({
+        container: ".uploader"
+    });
+</script>

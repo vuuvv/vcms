@@ -1,0 +1,54 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Helper.Pager<vuuvv.web.Models.Product> helper = ViewBag.helper;
+}
+
+@{
+    ViewBag.Col = 1;
+    ViewBag.Navs = @Model.Roots;
+    ViewBag.Sidebar = @Model.Sidebar;
+    ViewBag.Ancestors = @Model.Ancestors;
+}
+<ul class="products clearfix">
+    @for (int i = 0; i < helper.Items.Count; i++)
+    {
+        if (i % 4 == 3)
+        {
+    @: <li class="last">
+        }
+        else
+        {
+    @: <li>
+        }
+    @: <a href="/product/detail/@(helper.Items[i].Slug.ToLower())">
+			<div class="img-box">
+				<img width="215" src="/static/media/@(helper.Items[i].Image)">
+			</div>
+    @: </a>
+	@:	<h5>@(helper.Items[i].Name)</h5>
+	@:	<p>@(helper.Items[i].Sku)</p>
+    @: </li>
+    }
+</ul>
+
+@Html.Partial("Pager", helper)
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/product.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

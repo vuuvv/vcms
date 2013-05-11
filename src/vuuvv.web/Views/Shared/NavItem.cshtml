@@ -1,0 +1,22 @@
+﻿@model vuuvv.web.Helper.Node<vuuvv.web.Models.WebPage>
+@{
+    string cls = string.Format("main_menu_item_{0} main_menu_item{1}", Model.Data.Slug, Model.HasChildren ? "" : "_leaf");
+}
+
+@if (Model.Data.InNavigation)
+{
+<li class="@cls">
+<a class="main_menu_item_link" href="/@Model.Data.Url.Trim('/')"><span>@Model.Data.Title</span></a>
+@if (@Model.HasChildren)
+{
+    <div class="dropmenu">
+        <ul class="clearfix">
+        @foreach (var node in @Model.Children)
+        {
+            @Html.Partial("NavItem", @node);
+        }
+        </ul>
+    </div>
+}
+</li>
+}

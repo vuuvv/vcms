@@ -1,0 +1,62 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@using vuuvv.web.Models;
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    List<Honor> honors = ViewBag.honors;
+    List<HonorCategory> categories = ViewBag.categories;
+    HonorCategory category = ViewBag.category;
+}
+
+<div class="content">
+	<ul class="guide-tab">
+        @foreach (var c in categories)
+        {
+            <li>
+            @if (c == category)
+            {
+        @: <a class="active" href="/about/honor/@c.Slug">@c.Name</a>
+            }
+            else
+            {
+        @: <a href="/about/honor/@c.Slug">@c.Name</a>
+            }
+            </li>
+        }
+	</ul>
+	<div style="border: 1px solid #ccc; height: 420px; overflow: hidden; position: relative;">
+		<div id="imageFlow">
+			<div class="bank">
+                @foreach (var honor in honors)
+                {
+				<a href="#" title="@honor.Name" rel="/static/media/@honor.Image">　</a>
+                }
+			</div>
+			<div class="text">
+				<div class="title">正在加载图像，请稍候...</div>
+				<div class="legend">　</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/news.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/imageflow.css" type="text/css" />
+}
+
+@section ExtraJS {
+<script src="/static/js/imageflow.js" type="text/javascript"></script>
+<script type="text/javascript">
+    imf.create("imageFlow", 0.15, 0.6, 10);
+</script>
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

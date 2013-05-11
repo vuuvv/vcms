@@ -1,0 +1,44 @@
+﻿@model vuuvv.web.Helper.Node<vuuvv.web.Models.WebPage>
+
+<div class="left-nav">
+	<div class="left-header">@Model.Data.Title</div>
+    @for (int i = 0; i < @Model.Children.Count; i++)
+    {
+        var item = Model.Children[i];
+        if (!item.Data.InNavigation)
+        {
+            continue;
+        }
+        string cls = string.Format("box{0}{1}", i == 0 ? "" : " box-follow", item.HasChildren ? "" : " box-closed");
+        @: <div class="@cls">
+        @:  <div class="box-title">
+		@:		<a href="/@item.Data.Url" class="box-title-inner sl-linear">
+		@:			<h3>@item.Data.Title</h3>
+        if (item.HasChildren)
+        {
+		@:			<div class="box-toggle no-outline"></div>
+        }
+		@:		</a>
+        @:  </div>
+        if (item.HasChildren)
+        {
+			@: <div class="box-container">
+			@:	<ul>
+            foreach (var sub in item.Children)
+            {
+                if (sub.Data.InNavigation)
+                {
+					<li class="box-item">
+						<a href="/@sub.Data.Url">
+							<span class="box-item-name">@sub.Data.Title</span>
+							<span class="box-item-arrow arrow arrow-right"></span>
+						</a>
+					</li>
+                }
+            }
+            @:  </ul>
+            @: </div>
+        }
+        @: </div>
+    }
+</div>

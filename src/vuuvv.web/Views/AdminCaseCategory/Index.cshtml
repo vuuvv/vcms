@@ -1,0 +1,60 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model IEnumerable<CaseCategory>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="/manage/admincasecategory/">工程案例类别列表</a>
+			</li>
+			<li>
+				<a href="/manage/admincasecategory/create">创建工程案例类别</a>
+			</li>
+		</ul>
+<form action="/manage/admincasecategory/delete" method="post">
+		<div class="tab-content">
+			<div class="tab-pane active in">
+				<div class="well">
+					<table class="table">
+						<thead>
+							<tr>
+                                <th>删除</th>
+                                <th>Id</th>
+								<th>名称</th>
+								<th>@Html.DisplayNameFor(model => model.Slug)</th>
+								<th>序号</th>
+                                <th></th>
+							</tr>
+						</thead>
+						<tbody>
+@foreach (var item in Model)
+{
+							<tr>
+                                <td><input type="checkbox" value="@item.Id" id="id" name="ids"></td>
+								<td>@Html.DisplayFor(modelItem => item.Id)</td>
+								<td>@Html.DisplayFor(modelItem => item.Name)</td>
+								<td>@Html.DisplayFor(modelItem => item.Slug)</td>
+								<td>@Html.DisplayFor(modelItem => item.Ordering)</td>
+								<td>
+                                    @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                                    <a href="/manage/admincasecategory/Delete/@item.Id" onclick="return confirm('确定要删除吗？');">删除</a>
+                                </td>
+							</tr>
+}
+						</tbody>
+					</table>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">删除</button>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+</form>
+	</div>
+</div>

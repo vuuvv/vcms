@@ -1,0 +1,170 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model Product
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    List<ProductCategory> Categories = ViewBag.Categories;
+    List<ProductCategory> SelectedCategories = ViewBag.SelectedCategories;
+    List<Technology> Technologies = ViewBag.Technologies;
+    List<Technology> SelectedTechnologies = ViewBag.SelectedTechnologies;
+}
+<script src="/static/lib/ueditor/editor_config.js" type="text/javascript"></script>
+<script src="/static/lib/ueditor/editor_all_min.js" type="text/javascript"></script>
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li>
+                @Html.ActionLink("产品列表", "Index")
+			</li>
+			<li class="active">
+                @Html.ActionLink("创建", "Create")
+			</li>
+		</ul>
+		<div class="tab-content form-horizontal">
+			<div class="tab-pane active in">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+                <div class="control-group">
+                    <label class="control-label" for="CategoryIds">类型</label>
+                    <div class="controls">
+                    <select name="CategoryIds" data-placeholder="Choose a Country" style="width:350px;" multiple>
+                        @foreach (var category in Categories)
+                        {
+                            if (SelectedCategories.Contains(category))
+                            {
+                            <option value="@category.Id" selected>@category.Name</option> 
+                            }
+                            else
+                            {
+                            <option value="@category.Id">@category.Name</option> 
+                            }
+                        }
+                    </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="CategoryIds">中宇技术</label>
+                    <div class="controls">
+                    <select name="TechnologyIds" data-placeholder="选择中宇技术" style="width:350px;" multiple>
+                        @foreach (var technology in Technologies)
+                        {
+                            if (SelectedTechnologies.Contains(technology))
+                            {
+                            <option value="@technology.Id" selected>@technology.Name</option> 
+                            }
+                            else
+                            {
+                            <option value="@technology.Id">@technology.Name</option> 
+                            }
+                        }
+                    </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Sku">型号</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Sku)
+                    @Html.ValidationMessageFor(model => model.Sku)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Name">名称</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">Slug</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Slug)
+                    @Html.ValidationMessageFor(model => model.Slug)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Tags">标签</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Tags)
+                    @Html.ValidationMessageFor(model => model.Tags)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Image">图像</label>
+                    <div class="controls">
+                        <div class="uploader" target="#Image" mode="nomedia" url="/manage/adminupload?path=product"></div>
+                        <input type="hidden" id="Image" name="Image" />
+                        @Html.ValidationMessageFor(model => model.Image)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Thumbnail">缩略图</label>
+                    <div class="controls">
+                        <div class="uploader" target="#Thumbnail" mode="nomedia" url="/manage/adminupload?path=product/thumbnail"></div>
+                        <input type="hidden" id="Thumbnail" name="Thumbnail" />
+                        @Html.ValidationMessageFor(model => model.Thumbnail)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Summary">概述</label>
+                    <div class="controls">
+                    @Html.TextAreaFor(model => model.Summary, new { @class = "input-xxlarge", id = "summary_editor" })
+                    @Html.ValidationMessageFor(model => model.Summary)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Manual">手册</label>
+                    <div class="controls">
+                    @Html.TextAreaFor(model => model.Manual, new { @class = "input-xxlarge", id = "manual_editor" })
+                    @Html.ValidationMessageFor(model => model.Manual)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Ordering">顺序</label>
+                    <div class="controls">
+                    @Html.EditorFor(model => model.Ordering)
+                    @Html.ValidationMessageFor(model => model.Ordering)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">创建时间</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.CreatedDate, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.CreatedDate)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Active">有效</label>
+                    <div class="controls">
+                    @Html.CheckBoxFor(model => model.Active)
+                    @Html.ValidationMessageFor(model => model.Active)
+                    </div>
+                </div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary">创建</button>
+					</div>
+                </div>
+}
+
+			</div>
+		</div>
+	</div>
+</div>
+<link media="all" rel="stylesheet" href="/static/js/libs/artdialog/skins/default.css" type="text/css" />
+<script src="/static/js/jquery.html5uploader.js" type="text/javascript"></script>
+<script src="/static/js/libs/artdialog/jquery.artDialog.js" type="text/javascript"></script>
+<script src="/static/js/upload.js" type="text/javascript"></script>
+<script type="text/javascript">
+    new Uploader({
+        container: ".uploader",
+    });
+    var upload_url = "/manage/adminupload?path=product/description";
+    var options = {
+        imageUrl: upload_url,
+        imagePath: ""
+    };
+    var ue = UE.getEditor("summary_editor", options);
+    var ue = UE.getEditor("manual_editor", options);
+</script>

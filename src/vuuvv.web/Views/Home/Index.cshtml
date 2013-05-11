@@ -1,0 +1,131 @@
+﻿@using vuuvv.web.Models;
+@model vuuvv.web.Models.ViewModel.RenderPage
+
+@{ 
+    var slides = (List<Slide>)ViewBag.slides;
+    var news = (List<Press>)ViewBag.news;
+}
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="slides">
+	<div id="slides" class="">
+		<div class="slides_container">
+        @foreach (var slide in slides)
+        {
+			<div class="slide">
+				<a href="@slide.Link" title="@slide.Title" target="_blank">
+					<img src="/static/media/@slide.Image" alt="@slide.Title">
+				</a>
+			</div>
+        }
+		</div>
+	</div>
+</div>
+
+<div class="announ clearfix">
+	<div class="an-left">
+	</div>
+	<div class="an-con">
+		<h5>最新公告</h5>
+		<span class="more">
+			<a target="_blank" href="/news">更多&gt;&gt;</a>
+		</span>
+	</div>
+	<div class="an-right"></div>
+</div>
+
+<div class="latest">
+    @foreach (var article in news)
+    {
+    <a href="@Url.Action("detail", "Press", new { id = article.Id })" alt="@article.Title" target="_blank" title="@article.Title">【@article.Category.Name】@article.Title</a>
+    }
+</div>
+
+<div class="promos">
+	<ul class="clearfix">
+		<li class="first-child">
+			<div class="curve-down">
+				<a href="/product">
+					<img height="123" width="230" src="/static/img/p1.jpg" alt="" />
+				</a>
+			</div>
+		</li>
+		<li>
+			<div class="curve-down">
+				<a href="http://joyou.litijia.com/website/control/nav_room?tenantId=joyou" target="_blank">
+					<img height="123" width="230" src="/static/img/p2.jpg" alt="" />
+				</a>
+			</div>
+		</li>
+		<li>
+			<div class="curve-down">
+				<a href="/news/brand">
+					<img height="123" width="230" src="/static/img/p3.jpg" alt="" />
+				</a>
+			</div>
+		</li>
+		<li class="last-child">
+			<div class="curve-down">
+				<a href="#">
+					<img height="123" width="230" src="/static/img/p4.jpg" alt="" />
+					<span class="play"></span>
+				</a>
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/index.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+<style type="text/css">
+#rbbox{position:absolute;right:7px;bottom:0px;width:550px;height:0px;overflow:hidden;z-index: 10000;}
+.button{position:absolute;bottom:140px;right:0px;   display:inline;float:right;font-size:12px;cursor:pointer  }
+</style>
+}
+
+@section ExtraJS {
+<script src="/static/js/libs/slidesjs/slides.min.jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#slides').slides({
+            preload: true,
+            preloadImage: "/static/img/loading.gif",
+            play: 3500,
+            pause: 2500,
+            hoverPause: true,
+            effect: 'fade'
+        });
+    });
+    function locate_rbbox() {
+        document.getElementById("rbbox").style.top = (document.documentElement.scrollTop + document.documentElement.clientHeight - document.getElementById("rbbox").offsetHeight) + "px";
+        document.getElementById("rbbox").style.left = (document.documentElement.scrollLeft + document.documentElement.clientWidth - document.getElementById("rbbox").offsetWidth) + "px";
+    }
+    function closeBox() { document.getElementById("rbbox").style.display = "none"; }
+
+    window.onscroll = locate_rbbox
+    window.onresize = locate_rbbox
+    window.onload = locate_rbbox
+</script>
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+<div id="rbbox" class="div" style="width: 545px; height:157px" align="left">
+	<a class="button" onClick="closeBox()">关闭</a>
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="521" height="157" title="123">
+		<param name="movie" value="/flash/ad.swf">
+		<param name="quality" value="high">
+		<embed src="/flash/ad.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="521" height="157"></embed>
+	</object>
+</div>
+}
+@section Banner {
+}

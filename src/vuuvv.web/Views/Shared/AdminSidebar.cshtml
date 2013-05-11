@@ -1,0 +1,25 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@model List<SideBarItem>
+
+<div class="sidebar-nav">
+	<form action="@(Url.Action("Search"))" class="search form-inline">
+		<input name="keyword" type="text" placeholder="Search...">
+	</form>
+    @foreach (var sidebar in @Model)
+    {
+        if (sidebar.Children == null)
+        {
+        <a href="/manage/admin@(sidebar.Url)" class="nav-header"><i class="icon-@(sidebar.Icon)"></i>@sidebar.Title</a>
+        }
+        else
+        {
+        <a href="#@(sidebar.Url)-menu" class="nav-header" data-toggle="collapse"><i class="icon-@(sidebar.Icon)"></i>@sidebar.Title</a>
+        <ul id="#@(sidebar.Url)" class="nav nav-list collapse in">
+            @foreach(var c in sidebar.Children)
+            {
+            <li><a href="/manage/admin@(c.Url)">@c.Title</a></li>
+            }   
+        </ul>
+        }
+    }
+</div>

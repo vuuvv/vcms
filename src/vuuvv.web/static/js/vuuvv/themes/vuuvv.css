@@ -1,0 +1,442 @@
+.no-outline {
+	outline: none;
+	star:expression(this.onFocus=this.blur()); 
+	outline-style: none;
+}
+
+.vui-box {
+	border: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+a.vui-box {
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+
+a.vui-box:hover {
+	text-decoration: none;
+}
+
+a.vui-box:active {
+	text-decoration: none;
+}
+
+table.vui-box {
+	border-collapse: collapse;
+}
+
+ul.vui-box {
+	list-style-type: none;
+}
+
+div.vui-box {
+	position: relative;
+	display: -moz-inline-box!important;
+	display: inline-block!important;
+	zoom: 1;
+	*display: inline;
+	vertical-align: top;
+}
+
+.vui-clearfix {
+	zoom: 1;
+}
+
+.vui-clearfix:after {
+	content: '\20';
+	display: block;
+	clear: both;
+}
+
+* html div.vui-box {
+	display: inline!important;
+}
+
+*:first-child+html div.vui-box {
+	display: inline!important;
+}
+
+/*
+.vui-button-body, .vui-splitbutton-body, .vui-menubutton-body, .vui-combox-body {
+	position: relative;
+}
+	*/
+
+.vui-popup {
+	position: absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.vui-popup .vui-shadow {
+	position: absolute;
+	z-index: -1;
+}
+
+.vui-popup .vui-bordereraser {
+	position: absolute;
+	overflow: hidden;
+}
+
+.vui-tablepicker .vui-canvas {
+	position: relative;
+}
+
+.vui-tablepicker .vui-canvas .vui-overlay {
+	position: absolute;
+}
+
+.vui-dialog-modalmask, .vui-dialog-dragmask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.vui-toolbar {
+	position: relative;
+}
+
+
+.vui-label {
+	cursor: default;
+}
+
+.edui-unclickable {
+	color: gray;
+	cursor: default;
+}
+
+/* popup */
+.vui-popup {
+	z-index: 3000;
+}
+
+.vui-popup .vui-shadow {
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	box-shadow: 3px 3px 5px #818181;
+	-webkit-box-shadow: 3px 3px 5px #818181;
+	-moz-box-shadow: 3px 3px 5px #818181;
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Blur(PixelRadius='3', MakeShadow='true', ShadowOpacity='0.5')';
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3', MakeShadow='true', ShadowOpacity='0.5');
+}
+
+.vui-popup-content {
+	border: 1px solid gray;
+	background-color: white;
+	padding: 5px;
+}
+
+/* menu */
+.vui-menu {
+	z-index: 3000;
+}
+
+.vui-menu .vui-popup-content {
+	background-color: #fff;
+	padding: 3px;
+}
+
+.vui-menu-body {
+	_width: 150px;
+	min-width: 150px;
+	background: url(img/menu/separator_v.png) repeat-y 25px;
+}
+
+.vui-menuitem {
+	height: 22px;
+	cursor: default;
+	vertical-align: top;
+}
+
+.vui-menuitem .vui-icon {
+	width: 20px !important;
+	height: 20px !important;
+	background: url(img/icons.png) 0 -40px;
+	_background: url(img/icons.gif) 0 -40px;
+}
+
+.vui-menuitem .vui-label {
+	font-size: 12px;
+	line-height: 20px;
+	height: 20px;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+.vui-menu-body .vui-menuitem-state {
+	zoom: 1;
+	padding: 1px;
+}
+
+.vui-state-checked .vui-menuitem-body {
+	background: url(img/icons-all.gif) no-repeat 6px -205px;
+}
+
+.vui-state-disabled .edui-emnuitem-label {
+	color: gray;
+}
+
+.vui-state-disable .vui-icon {
+	opacity: 0.3;
+	-ms-filter: 'alpha(opacity=30)';
+	filter: alpha(opacity=30);
+}
+
+.vui-state-disable .vui-label {
+	color: gray;
+}
+
+.vui-icon {
+	background-image: url("img/icons.png");
+	_background-image: url("img/icons.gif");
+	height: 17px;
+	width: 17px;
+}
+
+.vui-label {
+	height: 17px;
+	line-height: 17px;
+	_padding-left: 3px;
+	_line-height: 20px;
+}
+
+.vui-new-doc .vui-icon {
+	background-position: -454px -34px;
+}
+
+.vui-doc-list .vui-icon {
+	background-position: -426px -34px;
+}
+
+.vui-button .vui-label, .vui-button .vui-icon {
+	cursor: pointer;
+}
+
+.vui-button {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+.vui-button-state {
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	padding: 7px 10px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	color: #3a3a3a;
+	background: #fff;
+	border: 1px solid #d2d2d2;
+	text-shadow: 1px 1px 0 #fff;
+	transition: all 0.3s ease-in-out;
+	border-radius: 2px;
+	box-shadow: 1px 1px 0 #f5f5f5;
+	-webkit-transition:all 0.3s ease-in-out;
+	background:-webkit-linear-gradient(top, #ffffff, #f5f5f5);
+	-moz-transition:all 0.3s ease-in-out;
+	background:-moz-linear-gradient(top, #ffffff, #f5f5f5 100%);
+	-o-transition:all 0.3s ease-in-out;
+}
+
+.vui-button .vui-state-hover {
+	color: #2a2a2a;
+	border-color: #999;
+	background: #f2f2f2;
+	box-shadow: 1px 1px 2px #d5d5d5;
+	background: -webkit-linear-gradient(top, #fff, #f2f2f2);
+	background: -moz-linear-gradient(top, #fff, #f2f2f2, 100%);
+}
+
+.vui-button .vui-state-active {
+	background:-webkit-linear-gradient(top, #f2f2f2, #ffffff);
+	background:-moz-linear-gradient(top, #f2f2f2, #ffffff 100%);
+	box-shadow:1px 1px 2px #d5d5d5 inset;
+}
+
+.vui-big-button .vui-button-state {
+	height: 40px;
+	padding: 0 30px;
+	line-height: 40px;
+	font-size: 18px;
+}
+
+.vui-red-button .vui-button-state {
+	color: #fff;
+	background: #d93041;
+	border-color: #d41326;
+	text-shadow: 1px 1px 0 #cc0911;
+	background:-webkit-linear-gradient(top, #e32d40, #e83345);
+	background:-moz-linear-gradient(top, #e32d40, #e83345 100%);
+}
+
+.vui-red-button .vui-state-hover {
+	background:#d21528;
+	border-color:#cc1427;
+	background:-webkit-linear-gradient(top, #f22439, #cc0a1e);
+	background:-moz-linear-gradient(top, #f22439, #cc0a1e 100%);
+}
+
+.vui-red-button .vui-state-active {
+	background:-webkit-linear-gradient(top, #cc0a1e, #f22439);
+	background:-moz-linear-gradient(top, #cc0a1e, #f22439 100%);
+}
+
+.vui-blue-button .vui-button-state {
+	color: #fff;
+	background: #29a7e5;
+	border-color: #148fd4;
+	text-shadow: 1px 1px 0 #148fd4;
+	background:-webkit-linear-gradient(top, #32ade8, #249fe3);
+	background:-moz-linear-gradient(top, #32ade8, #249fe3 100%);
+}
+
+.vui-blue-button .vui-state-hover {
+	background:#009ae2;
+	border-color:#148fd4;
+	background:-webkit-linear-gradient(top, #00a3e5, #008edd);
+	background:-moz-linear-gradient(top, #00a3e5, #008edd 100%);
+}
+
+.vui-blue-button .vui-state-active {
+	box-shadow:1px 1px 2px #0077b9 inset;
+	background:-webkit-linear-gradient(top, #008edd, #00a3e5);
+	background:-moz-linear-gradient(top, #008edd, #00a3e5 100%);
+}
+
+.vui-hassubmenu .vui-arrow {
+	height: 20px;
+	width: 20px;
+	float: right;
+	background: url(img/icons-all.gif) no-repeat 10px -233px;
+}
+
+.vui-menuseparator {
+	margin: 2px 0;
+	height: 1px;
+	padding: 1px;
+	overflow: hidden;
+}
+
+.vui-menuseparator-inner {
+	border-bottom: 1px solid #e2e3e3;
+	margin-left: 29px;
+	margin-right: 1px;
+}
+
+.vui-menu-body .vui-state-hover {
+	padding: 0 !important;
+	background-color: #fff5d4;
+	border: 1px solid #dcac6c;
+}
+
+.vui-tabbar {
+	height: 26px;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+.vui-tabbutton {
+	float: left;
+	margin-left: -1px;
+}
+
+.vui-tabbar .first-tab {
+	margin-left: 0;
+}
+
+.vui-tabbutton table {
+	width: 125px;
+	table-layout: fixed;
+}
+
+.vui-tabbutton td {
+	height: 26px;
+	vertical-align: middle;
+	background-image: url(img/bg_tablist.png);
+	background-position: 0 -26px;
+	background-repeat: repeat-x;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.vui-tabbutton .vui-state-selected td {
+	background-position: 0 -104px;
+}
+
+.vui-tabbutton td span {
+	color: #636261;
+	padding-left: 7px;
+	cursor: default;
+}
+
+.vui-tabbutton td.left {
+	width: 4px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.vui-tabbutton .vui-state-selected td.left {
+	background-position: 0 -78px;
+}
+
+.first-tab .vui-state-selected td.left {
+	background-position: 0 -156px;
+}
+
+.vui-tabbutton td.close {
+	width: 17px;
+}
+
+.vui-tabbutton td.right {
+	width: 4px;
+	background-position: 0 -52px;
+	background-repeat: no-repeat;
+}
+
+.vui-tabbutton .vui-state-selected td.right {
+	background-position: 0 -130px;
+}
+
+.vui-tabbutton .tabclose {
+	background: url(img/tab_icon.gif) no-repeat -135px -60px;
+	display: block;
+	font-size: 0;
+	height: 8px;
+	margin: 2px 3px 0 5px;
+	width: 8px;
+}
+
+.vui-tabbutton .tabclose:hover {
+	background-position: -150px -60px;
+}
+
+.vui-tabview-container {
+	border-left: 1px solid #c9c9c9;
+	background-color: #fff;
+	margin-top: -2px;
+	overflow: hidden;
+	position: relative;
+}
+
+.vui-tabpage .vui-tabpage-toolbar {
+	background: url(img/tab_toolbar_bg.gif) repeat-x 0 top;
+	height: 5px;
+	overflow: hidden;
+}
+

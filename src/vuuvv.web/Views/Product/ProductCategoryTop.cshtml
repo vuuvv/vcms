@@ -1,0 +1,44 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Helper.Node<vuuvv.web.Models.ProductCategory> category = ViewBag.category;
+    var children = category.Children;
+}
+
+<ul class="products-top list-horizontal">
+    @for (int i = 0; i < children.Count; i++)
+    {
+        if (i % 3 == 2)
+        {
+    @: <li class="last">
+        }
+        else
+        {
+    @: <li>
+        }
+		<a href="/product/@children[i].Data.Url" title="@children[i].Data.Name">
+			<img src="/static/media/@children[i].Data.Image" alt="@children[i].Data.Name">
+		</a>
+    @: </li>
+    }
+</ul>
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/product.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+
+@section Banner {
+}

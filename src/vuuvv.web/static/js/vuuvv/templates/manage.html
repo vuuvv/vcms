@@ -1,0 +1,75 @@
+{% define vui_dashboard %}
+<div id="{{ id }}" class="vui-dashboard {{ class_name }}" >
+	<div id="{{ id }}_header" class="vui-dashboard-header"></div>
+	<div class="vui-dashboard-body">
+		<div id="{{ id }}_sidebar" class="vui-dashboard-sidebar">
+		</div>
+		<div id="{{ id }}_content" class="vui-dashboard-content">
+		</div>
+	</div>
+	<div class="vui-dashboard-leftpanel-bottom"></div>
+</div>
+{% end define %}
+
+{% define vui_sidebar %}
+<div id="{{ id }}" class="vui-sidebar {{ class_name }}">
+	<div id="{{ id }}_header" class="vui-sidebar-header"></div>
+	<div id="{{ id }}_body" class="vui-sidebar-body"></div>
+</div>
+{% end define %}
+
+{% define vui_sidebartree %}
+<div id="{{ id }}" class="vui-sidebartree {{ class_name }}">
+	{% for (var i = 0, len = items.length; i< len; i++) { %}
+	<div class="vui-sidebartree-root">
+		<a href="#{{ items[i].action }}" class="vui-sidebartree-root-label no-outline">
+			<div class="vui-icon icon-arrow-right"></div>
+			<span>{{ items[i].label }}</span>
+		</a>
+		{% if (items[i].children.length) { %}
+			<ul>
+				{% for (var j = 0, len1 = items[i].children.length; j < len1; j++) { %}
+				<li>
+				<a href="#{{ items[i].children[j].action }}" class="vui-sidebartree-label no-outline">{{ items[i].children[j].label }}</a>
+				</li>
+				{% } %}
+			</ul>
+		{% } %}
+	</div>
+	{% } %}
+</div>
+{% end define %}
+
+{% define vui_notify %}
+<div id="{{ id }}" class="vui-notify {{ class_name }}">
+	<div id="{{ id }}_text" class="vui-notify-text"></div>
+	<button id="{{ id }}_close" class="close no-outline" type="button">×</button>
+</div>
+{% end define %}
+
+{% define vui_table %}
+<div id="{{ id }}" class="vui-table {{ class_name }}">
+	<table class="vui-table-header">
+		<thead>
+			<td class="vui-table-check">
+				<span><input type="checkbox" class="select-all"/></span>
+			</td>
+			{% _.each(columns, function(col, index) { %}
+				{% if (index === 0) { %}
+			<td class="vui-table-col-main">
+				<span>{{ col }}</span>
+			</td>
+				{% } else { %}
+			<td class="vui-table-col-{{ col }}">
+				<span>{{ col }}</span>
+			</td>
+				{% } %}
+			{% }); %}
+		</thead>
+	</table>
+	<div class="vui-table-body-wrap">
+		<table class="vui-table-body">
+		</table>
+	</div>
+</div>
+{% end define %}

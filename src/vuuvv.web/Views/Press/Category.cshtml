@@ -1,0 +1,79 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Helper.Pager<vuuvv.web.Models.Press> helper = ViewBag.helper;
+}
+
+<div class="news-list">
+	<ul>
+        @foreach (var article in helper.Items)
+        {
+		@: <li class="clearfix">
+		@: 	<a href="@Url.Action("detail", "Press", new { id = article.Id })" class="news-thumb">
+		@: 		<img src="@article.Thumbnail" alt="@article.Title" title="@article.Title"/>
+		@: 	</a>
+		@: 	<div class="news-info">
+		@: 		<a href="@Url.Action("detail", "Press", new { id = article.Id })" alt=""@article.Title" title="@article.Title" class="news-title">@article.Title</a>
+		@: 		<div class="news-desc">
+		@: 			<dl class="clearfix">
+						<dd>来源：
+                        <i>
+                        @if (!article.PressFrom.IsEmpty()) 
+                        { 
+                            @: @article.PressFrom 
+                        } 
+                        else
+                        { 
+                          @:  中宇卫浴 
+                        }
+                        </i></dd>
+						<dd>作者：<i>
+                        @if (!article.Author.IsEmpty()) 
+                        {
+                         @: @article.Author 
+                        }
+                        else
+                        { 
+                            @: 中宇卫浴 
+                         }
+                          </i>
+                          </dd>
+						<dd>日期：<i>@article.CreatedDate.ToLongDateString()</i></dd>
+   		@:			</dl>
+		@:		</div>
+		@:		<div class="news-tag clearfix">
+		@:			<span>标签：</span>
+                    foreach (var tag in article.TagList) 
+                    {
+						<a href="/search/@tag">
+							<i class="icon icon-gray icon-tag"></i>
+                            @tag
+						</a>
+                    }
+		@:		</div>
+		@:		<div class="news-intro">
+                    @Html.Raw(article.Summary)
+		@:		</div>
+		@:	</div>
+		@:</li>
+        }
+	</ul>
+</div>
+@Html.Partial("Pager", helper)
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/news.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

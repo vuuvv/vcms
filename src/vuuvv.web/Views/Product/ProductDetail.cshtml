@@ -1,0 +1,97 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Models.Product product = ViewBag.product;
+}
+
+<div class="product-show hlist">
+	<div class="hbox">
+		<div class="img-box">
+			<img src="/static/media/@product.Image"/>
+		</div>
+		<div class="tech-box">
+            @foreach(var tech in product.Technologies)
+            {
+			<img src="/static/media/@tech.Image" alt="@tech.Name" title="@tech.Name" />
+            }
+		</div>
+	</div>
+	<div class="hbox">
+		<div class="info-box">
+			<div class="detail">
+				<h5>@product.Sku</h5>
+				<div class="spu">
+					<ul class="spu-info">
+						<table>
+							<tr>
+								<td>商品名称：</td>
+								<td>@product.Name</td>
+							</tr>
+							<tr>
+								<td>型&#12288;&#12288;号：</td>
+								<td>@product.Name</td>
+							</tr>
+                            @foreach (var prop in product.properties) 
+                            {
+							<tr>
+								<td>@prop.Key</td>
+								<td>@prop.Value</td>
+							</tr>
+                            }
+						</table>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="serial-info">
+	<div class="tab-bar">
+		<ul class="clearfix">
+			<li class="tab-first selected">
+				<a class="tab-anchor no-outline" rel="summary" href="javascript:;">产品特点</a>
+			</li>
+			<li>
+				<a class="tab-anchor no-outline" rel="summary" href="javascript:;">装配图</a>
+			</li>
+			<li>
+				<a class="tab-anchor no-outline" rel="summary" href="javascript:;">说明书</a>
+			</li>
+			<li class="tab-last">
+				<a class="tab-anchor no-outline" rel="summary" href="javascript:;">相关产品</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="tab-content">
+		<div id="summary">
+			<div class="article">
+                @Html.Raw(product.Summary)
+			</div>
+		</div>
+
+		<div class="tech">
+		</div>
+	</div>
+</div>
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/product.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+
+@section Banner {
+}

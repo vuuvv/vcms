@@ -1,0 +1,69 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model User
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li>
+				<a href="/manage/adminuser/">用户管理</a>
+			</li>
+			<li class="active">
+				<a href="/manage/adminuser/create">创建用户</a>
+			</li>
+		</ul>
+		<div class="tab-content form-horizontal">
+			<div class="tab-pane active in">
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+                <div class="control-group">
+                    <label class="control-label" for="Name">用户名</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.UserName)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">真实姓名</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.RealName, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.RealName)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">密码</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.Password, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.Password)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">有效</label>
+                    <div class="controls">
+                    @Html.CheckBoxFor(model => model.Active)
+                    @Html.ValidationMessageFor(model => model.Active)
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="Slug">创建时间</label>
+                    <div class="controls">
+                    @Html.TextBoxFor(model => model.CreatedDate, new { @class = "input-xxlarge" })
+                    @Html.ValidationMessageFor(model => model.CreatedDate)
+                    </div>
+                </div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary" id="submit">保存</button>
+                        @Html.HiddenFor(model => model.Id)
+					</div>
+                </div>
+}
+
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,234 @@
+.article-container {
+	border: 1px solid #cacaca;
+	padding: 15px;
+	margin-bottom: 8px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-title {
+	padding-top: 20px;
+}
+
+.article-title h1 {
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 160%;
+	text-align: center;
+}
+
+.article-title h2 {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 160%;
+	text-align: center;
+}
+
+.article-info {
+	color: #666;
+	text-align: center;
+	height: 32px;
+	line-height: 32px;
+	_height: 24px;
+	_line-height: 24px;
+	_padding-top: 10px;
+	font-size: 0;
+}
+
+.article-info .sns-icon {
+	padding-right: 4px;
+}
+
+.article-info span, .article-info a {
+	font-size: 12px;
+}
+
+.article-info i {
+	color: #d33;
+	margin: 0 7px 0 0;
+	font-style: normal;
+}
+
+.article-info .sns-icon {
+	margin-bottom: -3px;
+}
+
+.article-container .separator {
+	border-bottom: 1px solid #d3d3d3;
+	margin: 2px 30px;
+}
+
+.article {
+}
+
+.article h1, 
+.article h2, 
+.article h3, 
+.article h4 {
+	color: #111;
+	font-weight: 400;
+}
+
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article p {
+	margin-bottom: 24px;
+	padding: 0;
+}
+
+.article h1 {
+	font-size: 48px;
+}
+
+.article h2 {
+	font-size: 36px;
+	margin: 24px 0 6px;
+}
+
+.article h3 {
+	font-size: 24px;
+}
+
+.article h4 {
+	font-size: 21px;
+}
+
+.article h5 {
+	font-size: 18px;
+}
+
+.article h6 {
+	font-size: 16px;
+	margin-bottom: 8px;
+}
+
+.article h1 {
+	font-size: 48px;
+}
+
+.article a {
+	color: #09f;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+.article a:hover {
+	text-decoration: none;
+	color: #ff6600;
+}
+
+.article ul,
+.article ol {
+	padding: 0;
+	margin: 0;
+	padding-left: 24px;
+}
+
+.article ol {
+	list-style: decimal;
+}
+
+.article ul {
+	list-style: disc;
+}
+
+.article li {
+	line-height: 20px;
+	padding-bottom: 15px;
+}
+
+.article li ul,
+.article li ol {
+	margin-left: 24px;
+}
+
+.article p,
+.article ul,
+.article ol {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.article pre {
+	padding: 0 24px;
+	white-space: pre-wrap;
+}
+
+.article code {
+	font-family: Consolas, Monaco, Andale Mono, monospace;
+	line-height: 1.5;
+	font-size: 13px;
+}
+
+.article aside {
+	display: block;
+	float: right;
+	width: 390px;
+}
+
+.article blockquote {
+	border-left: .5em solid #eee;
+	padding: 0 2em;
+	margin-left: 0;
+	max-width: 476px;
+}
+
+.article cite {
+	font-size: 14px;
+	line-height: 20px;
+	color: #bfbfbf;
+}
+
+.article blockquote cite:before {
+	content: '\2014 \00a0';
+}
+
+.article blockquote p {
+	color: #666;
+}
+
+.article hr {
+	text-align: left;
+	margin: 0 auto 0 0;
+	color: #999;
+}
+
+.article p {
+	font-size: 13px;
+	line-height: 18px;
+	margin: 0;
+	padding: 0 0 20px;
+	text-indent: 2em;
+}
+
+.article .yahei {
+	font-size: 14px;
+	font-family: "Microsoft Yahei";
+}
+
+.article .indent {
+	padding: 10px 15px 0;
+}
+
+.article .section {
+	padding-bottom: 24px;
+}
+
+.article .title {
+	border-bottom: 1px solid #ccc;
+	color: #5670b6;
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	height: 24px;
+	line-height: 24px;
+	margin: 20px 10px 15px;
+	padding: 4px 10px;
+}
+

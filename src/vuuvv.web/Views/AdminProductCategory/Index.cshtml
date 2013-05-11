@@ -1,0 +1,77 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model IEnumerable<ProductCategory>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="/manage/adminproductcategory/">产品类型列表</a>
+			</li>
+			<li>
+                @if (ViewBag.category != null)
+                {
+				<a href="/manage/adminproductcategory/create/@ViewBag.category.Id">创建产品类型</a>
+                }
+                else
+                {
+				<a href="/manage/adminproductcategory/create/">创建产品类型</a>
+                }
+			</li>
+		</ul>
+<form action="/manage/adminproductcategory/delete" method="post">
+		<div class="tab-content">
+			<div class="tab-pane active in">
+				<div class="well">
+					<table class="table">
+						<thead>
+							<tr>
+                                <th>删除</th>
+                                <th>Id</th>
+								<th>父类</th>
+								<th>名称</th>
+								<th>有效</th>
+                                <th></th>
+							</tr>
+						</thead>
+						<tbody>
+@foreach (var item in Model)
+{
+							<tr>
+                                <td><input type="checkbox" value="@item.Id" id="id" name="ids"></td>
+								<td>@Html.DisplayFor(modelItem => item.Id)</td>
+								<td>@Html.DisplayFor(modelItem => item.Parent.Name)</td>
+								<td><a href="/manage/adminproductcategory/index/@item.Id">@Html.DisplayFor(modelitem => item.Name)</a></td>
+								<td>@Html.DisplayFor(modelItem => item.Active)</td>
+								<td>
+                                    @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("增加子类", "Create", new { id = item.Id }) |
+                                    <a href="/manage/adminproductcategory/Delete/@item.Id" onclick="return confirm('确定要删除吗？');">删除</a>
+                                </td>
+							</tr>
+}
+						</tbody>
+					</table>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">删除</button>
+                            @if (ViewBag.category == null)
+                            {
+                            <a href="/manage/adminproductcategory/" class="btn">上一级</a>
+                            }
+                            else
+                            {
+                            <a href="/manage/adminproductcategory/index/@ViewBag.category.ParentId" class="btn">上一级</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+</form>
+	</div>
+</div>
+

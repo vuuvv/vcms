@@ -1,0 +1,327 @@
+.aui_dialog .aui_main {
+	font-size: 0;
+}
+
+.aui_content {
+	font-size: 12px;
+}
+
+.filedialog {
+	height: 480px;
+	width: 640px;
+}
+
+.fd-top {
+	background: url(img/fd_edge_bg.png) no-repeat;
+	font-size: 0;
+	line-height: 0;
+	height: 4px;
+}
+
+.fd-bottom {
+	background: url(img/fd_edge_bg.png) no-repeat 0 -6px;
+	font-size: 0;
+	line-height: 0;
+	height: 3px;
+}
+
+.fd-body {
+	background: url(img/fd_body_bg.png) repeat-y;
+	padding: 0;
+	height: 480px;
+	overflow: hidden;
+}
+
+.fd-browser {
+	float: left;
+	width: 476px;
+	position: relative;
+}
+
+.fd-info {
+	float: right;
+	padding-bottom: 30px;
+	width: 160px;
+}
+
+.fd-header {
+	background: #f1f4f7;
+	border-bottom: 1px solid #dcdddd;
+	padding: 0;
+	z-index: 10;
+	position: relative;
+}
+
+.fd-path {
+	overflow: hidden;
+	height: 25px;
+	margin: 0;
+	padding: 8px 0 9px 20px;
+}
+
+.fd-path .home {
+	color: #333;
+	font-size: 20px;
+	margin: 0;
+	text-decoration: none;
+}
+
+.fd-path span {
+	color: #c4c4c4;
+	margin: 0 5px 0 6px;
+}
+
+.fd-path .normal {
+	color: #3185c7;
+	text-decoration: none;
+}
+
+.fd-path .normal:hover {
+	color: #07436b;
+	text-decoration: underline;
+}
+
+.fd-tools {
+	padding: 10px;
+}
+
+#upload-btn {
+	width: 54px;
+	height: 28px;
+}
+
+.fd-upload-progress {
+	padding: 7px 9px 8px;
+	position: relative;
+}
+
+.fd-upload-progress dl {
+	margin: 0;
+	padding: 0;
+}
+
+.fd-upload-progress-inner {
+	background: url(img/upload_progress_bg.png) no-repeat;
+	width: 142px;
+	height: 148px;
+	padding: 1px 1px;
+	position: relative;
+	overflow: hidden;
+}
+
+.fd-upload-file {
+	color: #07436b;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 16px;
+	overflow: hidden;
+	padding: 4px 0 5px 5px;
+	display: block;
+	text-decoration: none;
+}
+
+dt.fd-hover .fd-upload-file {
+	background: #e9f0f5;
+}
+
+.fd-upload-file-status {
+	background: url(img/file_progress_icon.png);
+}
+
+.fd-ok .fd-upload-file-status {
+	background-position: 0 -360px;
+	float: right;
+	font-size: 0;
+	height: 12px;
+	margin: 2px 5px 0 0;
+	width: 14px;
+	display: block;
+}
+
+.fd-cancelable .fd-upload-file-status {
+	background-position: 0 -306px;
+	float: right;
+	font-size: 0;
+	height: 13px;
+	margin: 2px 5px 0 0;
+	width: 13px;
+	display: block;
+}
+
+.fd-cancelable .fd-upload-file-status:hover {
+	background-position: 0 -324px;
+}
+
+.fd-progress {
+	float: right;
+	display: block;
+	margin-right: 3px;
+	width: 32px;
+	cursor: default;
+}
+
+.fd-upload-name {
+	display: block;
+	float: left;
+	width: 80px;
+	color: #07436b;
+	font-size: 12px;
+	font-weight: normal;
+	height: 16px;
+	line-height: 16px;
+	overflow: hidden;
+	cursor: default;
+}
+
+/* <file dialog - files viewer> */
+.fd-browser-view {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 394px;
+	position: relative;
+	z-index: 5;
+}
+
+.fd-icon-list {
+	margin: 0;
+	list-style: none;
+	padding: 20px 0 20px 20px;
+	width: 452px;
+}
+
+.fd-list-item {
+	list-style: none;
+	padding: 0;
+	margin: 0 5px 5px 0;
+	width: 100px;
+	height: 135px;
+	position: relative;
+	border: 1px solid #fff;
+	float: left;
+}
+
+.fd-list-selected {
+	border: 1px solid #ececec;
+	border-radius: 2px 2px 2px 2px;
+}
+
+.fd-list-item-wrap {
+	text-align: center;
+	position: absolute;
+	height: 135px;
+}
+
+.fd-icon-list .fd-list-item-thumb {
+	padding: 10px 10px 2px;;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+.fd-list-item-thumb img {
+	height: 80px;
+	width: 80px;
+}
+
+.fd-list-item-name {
+	padding: 5px 3px;
+	display: block;
+}
+
+.fd-list-txt {
+	height: 14px;
+	width: 94px;
+	overflow: hidden;
+	text-align: center;
+	color: #666;
+	cursor: pointer;
+	display: block;
+	font-family: "\5B8B\4F53";
+}
+
+.fd-list-item-info {
+	color: #bababa;
+}
+
+.fd-list-check {
+	left: 5px;
+	position: absolute;
+	top: 6px;
+	display: none;
+	outline-style: none;
+}
+
+.fd-list-selected .fd-list-check {
+	display: block;
+}
+
+/* </file dialog - files viewer> */
+
+/* <file icon> */
+.fd-icon {
+	background: url(img/file_icon.png) no-repeat 0 0;
+	_background: url(img/file_icon_ie6.png) no-repeat 0 0;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	font-size: 0;
+	line-height: 0;
+}
+.fd-icon-folder {
+	background-position:0 0
+}
+.fd-icon-csv,.fd-icon-other,.fd-icon-rtf {
+	background-position:0 -80px
+}
+.fd-icon-doc {
+	background-position:0 -160px
+}
+.fd-icon-exe {
+	background-position:0 -240px
+}
+.fd-icon-html {
+	background-position:0 -320px
+}
+.fd-icon-music {
+	background-position:0 -400px
+}
+.fd-icon-ppt {
+	background-position:0 -480px
+}
+.fd-icon-pdf {
+	background-position:0 -560px
+}
+.fd-icon-photo,.fd-icon-pic {
+	background-position:0 -640px
+}
+.fd-icon-rar {
+	background-position:0 -720px
+}
+.fd-icon-txt {
+	background-position:0 -800px
+}
+.fd-icon-video {
+	background-position:0 -880px
+}
+.fd-icon-wps {
+	background-position:0 -960px
+}
+.fd-icon-xls {
+	background-position:0 -1040px
+}
+.fd-icon-zip{
+	background-position:0 -1120px
+}
+/* </file icon> */
+
+.fd-tool-bar {
+	position: relative;
+	z-index: 10;
+}
+
+.fd-list-check-all {
+	position: absolute;
+	left: 10px;
+	top: 12px;
+}

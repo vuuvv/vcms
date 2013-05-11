@@ -1,0 +1,62 @@
+﻿@using vuuvv.web.Models.ViewModel;
+@using vuuvv.web.Models;
+@model IEnumerable<Dealer>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row-fluid">
+	<div class="well">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="/manage/admindealer/">经销商列表</a>
+			</li>
+			<li>
+				<a href="/manage/admindealer/create">创建</a>
+			</li>
+		</ul>
+<form action="/manage/admindealer/delete" method="post">
+		<div class="tab-content">
+			<div class="tab-pane active in">
+				<div class="well">
+					<table class="table">
+						<thead>
+							<tr>
+                                <th>删除</th>
+                                <th>Id</th>
+								<th>区域</th>
+								<th>名称</th>
+								<th>联系人</th>
+								<th>有效</th>
+                                <th></th>
+							</tr>
+						</thead>
+						<tbody>
+@foreach (var item in Model)
+{
+							<tr>
+                                <td><input type="checkbox" value="@item.Id" id="id" name="ids"></td>
+								<td>@Html.DisplayFor(modelItem => item.Id)</td>
+								<td>@Html.DisplayFor(modelItem => item.MyArea.Name)</td>
+								<td>@Html.DisplayFor(modelItem => item.Name)</td>
+								<td>@Html.DisplayFor(modelItem => item.Contact)</td>
+								<td>@Html.DisplayFor(modelItem => item.Active)</td>
+								<td>
+                                    @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                                    <a href="/manage/admindealer/Delete/@item.Id" onclick="return confirm('确定要删除吗？');">删除</a>
+                                </td>
+							</tr>
+}
+						</tbody>
+					</table>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">删除</button>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+</form>
+	</div>
+</div>

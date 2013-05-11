@@ -1,0 +1,24 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@Html.Raw(@Model.Page.Data.Content)
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/news.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}

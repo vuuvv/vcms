@@ -1,0 +1,92 @@
+﻿@model vuuvv.web.Models.ViewModel.RenderPage
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    vuuvv.web.Models.Press article = ViewBag.article;
+}
+
+<div class="article-container">
+	<div class="article-title">
+		<h1>@article.Title</h1>
+        @if (article.SubTitle.IsEmpty())
+        {
+		@: <h2>@article.SubTitle</h2>
+        }
+	</div>
+	<div class="article-info">
+        <span>来源：
+            <i>
+            @if (!article.PressFrom.IsEmpty()) 
+            { 
+                @: @article.PressFrom 
+            } 
+            else
+            { 
+              @:  中宇卫浴 
+            }
+            </i>
+        </span>
+        <span>作者：
+            <i>
+            @if (!article.Author.IsEmpty()) 
+            {
+             @: @article.Author 
+            }
+            else
+            { 
+                @: 中宇卫浴 
+            }
+            </i>
+        </span>
+        <span>日期：<i>@article.CreatedDate.ToLongDateString()</i></span>
+        @*{
+		<span>分享到：</span>
+		<a href="#" class="sns-icon sns-tsina" title="分享至新浪微博"></a>
+		<a href="#" class="sns-icon sns-tqq" title="分享至腾讯微博"></a>
+		<a href="#" class="sns-icon sns-t163" title="分享至网易微博"></a>
+		<a href="#" class="sns-icon sns-tsohu" title="分享至搜狐微博"></a>
+		<a href="#" class="sns-icon sns-qzone" title="分享到QQ空间"></a>
+        }*@
+	</div>
+	<div class="separator"></div>
+    <div style="height: 30px; width: 225px; margin: 3px auto;">
+        <!-- Baidu Button BEGIN -->
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+        <span class="bds_more">分享到：</span>
+        <a class="bds_tsina"></a>
+        <a class="bds_qzone"></a>
+        <a class="bds_tqq"></a>
+        <a class="bds_renren"></a>
+        <a class="bds_t163"></a>
+        <a class="shareCount"></a>
+        </div>
+        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=5600467" ></script>
+        <script type="text/javascript" id="bdshell_js"></script>
+        <script type="text/javascript">
+            document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
+        </script>
+        <!-- Baidu Button END -->
+    </div>
+	<div class="news-content">
+		<div class="article">
+            @Html.Raw(article.Content)
+		</div>
+	</div>
+</div>
+
+@section ExtraCSS {
+<link media="all" rel="stylesheet" href="/static/css/news.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/article.css" type="text/css" />
+<link media="all" rel="stylesheet" href="/static/css/shadows.css" type="text/css" />
+}
+
+@section ExtraJS {
+}
+
+@section ExtraHead {
+}
+
+@section Overlay {
+}
+
+@section Banner {
+}
