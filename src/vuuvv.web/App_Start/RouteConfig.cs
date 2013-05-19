@@ -61,6 +61,12 @@ namespace vuuvv.web
                 new { controller = "Conference", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                "Service",
+                "service/{action}",
+                new { controller = "Service", action = "Index"}
+            );
+
             RegisterPress(routes);
             RegisterDealer(routes);
             RegisterNews(routes);

@@ -1,0 +1,121 @@
+html, body, p {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  color: #333;
+  font: 12px/1.125 Arial,Helvetica,sans-serif;
+}
+
+* {margin:0;padding:0;} 
+
+img 
+{
+    border: none;
+}
+
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+}
+
+.main {
+    overflow:auto;
+    padding-bottom: 634px;
+}  /* must be same height as the footer */
+
+.footer {
+    position: relative;
+    margin-top: -634px; /* negative value of footer height */
+    height: 634px;
+    clear:both;
+}
+
+.content 
+{
+    height: 634px;
+    overflow: hidden;
+    position: relative;
+    background: url(/static/img/service/home_bg.png) no-repeat;
+}
+
+.nav 
+{
+    display: block;
+    position: absolute;
+    height: 68px;
+    width: 55px;
+}
+
+.nav1 
+{
+    left: 205px;
+    top: 546px;
+}
+
+.nav2
+{
+    left: 287px;
+    top: 474px;
+}
+
+.nav3
+{
+    left: 406px;
+    top: 425px;
+}
+
+.nav4
+{
+    right: 396px;
+    top: 425px;
+}
+
+.nav5
+{
+    right: 287px;
+    top: 474px;
+}
+
+.nav6
+{
+    right: 205px;
+    top: 546px;
+}
+
+.nav7
+{
+    left: 406px;
+    top: 556px;
+}
+
+.nav8
+{
+    right: 396px;
+    top: 556px;
+}
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+    content:"";
+    height:100%;
+    float:left;
+    width:0;
+    margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+
+.w {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+

@@ -171,6 +171,7 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Filters\AuthorizeFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1627,6 +1628,7 @@
     <Content Include="static\css\news.css" />
     <Content Include="static\css\prettyPhoto.css" />
     <Content Include="static\css\product.css" />
+    <Content Include="static\css\service\index.css" />
     <Content Include="static\css\shadows.css" />
     <Content Include="static\css\Site.css" />
     <Content Include="static\css\theme.css" />
@@ -3325,7 +3327,9 @@
     <Content Include="static\lib\ueditor\_src\ui\ui.js" />
     <Content Include="static\lib\ueditor\_src\ui\uibase.js" />
     <Content Include="static\lib\ueditor\_src\ui\uiutils.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -3648,6 +3652,8 @@
     <Content Include="Views\Press\Detail.cshtml" />
     <Content Include="Views\Press\Index.cshtml" />
     <Content Include="Views\Press\Magzine.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Shared\ServiceLayout.cshtml" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
