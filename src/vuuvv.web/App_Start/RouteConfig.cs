@@ -28,7 +28,8 @@ namespace vuuvv.web
             routes.MapRoute(
                 "Home",
                 "",
-                defaults: new { controller = "Home", action = "Index" }
+                new { controller = "Home", action = "Index" },
+                new string[] {"vuuvv.web.Controllers"}
             );
 
             routes.MapRoute(

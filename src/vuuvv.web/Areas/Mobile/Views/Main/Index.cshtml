@@ -1,0 +1,99 @@
+﻿@model vuuvv.Domain.Entities.Mobile.Navigation[]
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JOYOU 中宇卫浴官网 手机版</title>
+    <meta name="cultureCode" content="en-us" />
+    <meta name="direction" content="ltr" />
+    <meta name="title" content="JOYOU Mobile 中宇卫浴" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="viewport" content="width=320,user-scalable=no" />
+    <link media="all" rel="stylesheet" href="/static/mobile/css/style.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        /* Swipe 2 required styles */
+        .swipe
+        {
+            overflow: hidden;
+            visibility: hidden;
+            position: relative;
+        }
+        .swipe-wrap
+        {
+            overflow: hidden;
+            position: relative;
+        }
+        .swipe-wrap > figure
+        {
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+        /* END required styles */
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="@Url.Action("Index", "Main", new { area = "Mobile" })">
+            <img src="/static/mobile/img/logo.png" />
+        </a>
+    </div>
+    <div class="cont">
+    </div>
+    @Html.Partial("Carousel")
+    <div class="accordion">
+    @foreach (var nav in @Model)
+    {
+        @Html.Partial("AccordionTitle", nav.Name)
+        <div class="content">
+            @Html.Partial(nav.ViewName)
+        </div>
+    }
+    </div>
+    <div class="footer">
+    <span>版权所有</span>&copy;2009-2013 中宇卫浴 www.joyou.com.cn
+    </div>
+</body>
+<script src='/static/mobile/js/swipe.js'></script>
+<script>
+    $(function () {
+        var elem = document.getElementById('slider');
+        var bullets = document.getElementById('position').getElementsByTagName('li');
+        var mySwipe = Swipe(elem, {
+            auto: 3000,
+            continuous: true,
+            callback: function (pos) {
+
+                var i = bullets.length;
+                while (i--) {
+                    bullets[i].className = ' ';
+                }
+                bullets[pos].className = 'on';
+
+            }
+        });
+        $(".navigation .next").click(function () {
+            mySwipe.next();
+            return false;
+        });
+        $(".navigation .prev").click(function () {
+            mySwipe.prev();
+            return false;
+        });
+        $(".accordion .title").click(function () {
+            var me = $(this);
+            var target = me.next();
+            if (me.hasClass("on")) {
+                me.removeClass("on");
+                target.slideUp();
+            } else {
+                me.addClass("on");
+                target.slideDown();
+            }
+        });
+    });
+</script>
+</html>

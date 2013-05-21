@@ -141,6 +141,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Mobile\Controllers\MainController.cs" />
+    <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
     <Compile Include="Controllers\AdminAreaController.cs" />
     <Compile Include="Controllers\AdminBannerImageController.cs" />
     <Compile Include="Controllers\AdminConferenceArticleController.cs" />
@@ -3327,6 +3329,13 @@
     <Content Include="static\lib\ueditor\_src\ui\ui.js" />
     <Content Include="static\lib\ueditor\_src\ui\uibase.js" />
     <Content Include="static\lib\ueditor\_src\ui\uiutils.js" />
+    <Content Include="static\mobile\css\style.css" />
+    <Content Include="static\mobile\index.html" />
+    <Content Include="static\mobile\jquery.isotope.min.js" />
+    <Content Include="static\mobile\js\swipe.js" />
+    <Content Include="static\mobile\slider.js" />
+    <Content Include="static\mobile\style.css" />
+    <Content Include="static\mobile\swipe.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -3345,6 +3354,17 @@
     <Content Include="Views\AdminWebPage\Index.cshtml" />
     <Content Include="Views\Shared\Render.cshtml" />
     <Content Include="Views\Shared\NavItem.cshtml" />
+    <Content Include="Areas\Mobile\Views\Web.config" />
+    <Content Include="Areas\Mobile\Views\Shared\AccordionTitle.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\Hall.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\News.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\Suit.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\Products.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\Agenda.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\Links.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\About.cshtml" />
+    <Content Include="Areas\Mobile\Views\Main\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\Shared\Carousel.cshtml" />
     <None Include="static\css\icons\Thumbs.db" />
     <None Include="static\css\icons\vssver2.scc" />
     <None Include="static\css\img\Thumbs.db" />
@@ -3674,6 +3694,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Mobile\Models\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
@@ -3776,6 +3797,12 @@
     <EmbeddedResource Include="Migrations\201305060254379_AddTopOrderForPressModel.resx">
       <DependentUpon>201305060254379_AddTopOrderForPressModel.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\vuuvv.Domain\vuuvv.Domain.csproj">
+      <Project>{C5007D9C-D09B-4B74-983E-9FC8570AC94A}</Project>
+      <Name>vuuvv.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
