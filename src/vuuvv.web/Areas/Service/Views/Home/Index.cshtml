@@ -1,0 +1,61 @@
+﻿@model vuuvv.Domain.Entities.Service.Carousel[]
+
+
+@Html.Partial("Carousel", Model)
+
+<div class="oldtonew box">
+    <div class="hd oldtonew">
+        <div class="inner ya">走进社区 走进中宇</div>
+    </div>
+    <div class="bd">
+        <img src="/static/service/img/01-1.jpg" />
+        <div class="fl ya" style="width:370px; padding-left: 45px">
+            <h1>中宇卫浴  以旧换新  送爱送温暖</h1>
+            <p>中宇卫浴以旧换新活动开始啦！</p>
+            <p>疯狂马桶节疯狂特价</p>
+            <p>活动期间，只需注册登记即可参与活动</p>
+            <p>关爱自己，关爱家人</p>
+            <p>换掉旧马桶，用上新中宇</p>
+            <a class="preorder" href="">网上预约订购</a>
+        </div>
+        <img src="/static/service/img/01-2.gif" style="margin-top: 68px;"/>
+    </div>
+</div>
+
+<div style="height: 159px; padding: 22px 0 33px 0">
+    <div class="promo fl"></div>
+    <div class="fl ya zc">
+        <h1>预定政策</h1>
+        <p>VIP免费注册，注册可享受以旧换新活动。</p>
+        <p>如果您还不是中宇会员，请点击这里免费</p>
+        <p>注册，如果您忘记了密码，请点击这里忘</p>
+        <p>记密码VIP专栏链接</p>
+    </div>
+    <div class="fl hotlink ya">
+        <h1>以旧换新 友情链接</h1>
+        <a href="">中宇卫浴天猫旗舰店</a>
+        <a href="">中宇卫浴天猫旗舰店</a>
+        <a href="">中宇卫浴天猫旗舰店</a>
+        <a href="">中宇卫浴天猫旗舰店</a>
+    </div>
+</div>
+
+@section ExtraCSS {
+<link rel="Stylesheet" href="/static/service/css/index.css" />
+}
+
+@section ExtraJS {
+<script src="/static/js/libs/slidesjs/slides.min.jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#slides').slides({
+            preload: true,
+            preloadImage: "/static/img/loading.gif",
+            play: 3500,
+            pause: 2500,
+            hoverPause: true,
+            effect: 'fade'
+        });
+    });
+</script>
+}

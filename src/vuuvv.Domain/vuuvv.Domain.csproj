@@ -54,12 +54,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Mobile\Navigation.cs" />
+    <Compile Include="Entities\Service\Carousel.cs" />
+    <Compile Include="Entities\Service\Navigation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

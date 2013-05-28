@@ -1,0 +1,116 @@
+﻿html, body, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 
+{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+ul, li 
+{
+    list-style: none;
+}
+
+.w 
+{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.fl 
+{
+    float: left;
+}
+
+.fr 
+{
+    float: right;
+}
+
+.ya 
+{
+    font-family: 微软雅黑;
+}
+
+.head 
+{
+    padding-top: 30px;
+}
+
+.foot 
+{
+    background: url(../img/foot.png);
+    height: 65px;
+    margin-bottom: 20px;
+}
+
+.nav 
+{
+    height: 37px;
+}
+
+.nav .left
+{
+    background: url(../img/nav_left.png) no-repeat;
+    float: left;
+    width: 11px;
+    height: 37px;
+}
+
+.nav .right
+{
+    background: url(../img/nav_right.png) no-repeat;
+    float: right;
+    width: 11px;
+    height: 37px;
+}
+
+.nav ul 
+{
+    background: url(../img/nav_bg.png) repeat-x;
+    float: left;
+    height: 37px;
+    width: 958px;
+}
+
+.nav li 
+{
+    float: left;
+}
+
+.nav li a
+{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 37px;
+    color: #fff;
+    padding: 0 22px;
+    text-decoration: none;
+}
+
+.box .hd 
+{
+    height: 44px;
+    padding: 40px 0 0 89px;
+}
+
+.box .hd .inner
+{
+    background: #88b82e;
+    height: 44px;
+    padding-left: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.box .bd 
+{
+    background: #f2f2f2;
+}
+

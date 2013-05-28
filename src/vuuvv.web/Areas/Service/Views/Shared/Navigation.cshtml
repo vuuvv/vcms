@@ -1,0 +1,14 @@
+﻿@model vuuvv.Domain.Entities.Service.Navigation[]
+
+<div class="nav">
+    <div class="left">
+    </div>
+    <ul>
+    @foreach (var n in Model)
+    {
+        <li><a class="ya" href="@n.Link">@n.Title</a></li>
+    }
+    </ul>
+    <div class="right">
+    </div>
+</div>

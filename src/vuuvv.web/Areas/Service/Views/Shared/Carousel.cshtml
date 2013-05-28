@@ -1,0 +1,16 @@
+﻿@model vuuvv.Domain.Entities.Service.Carousel[]
+
+<div class="slides">
+	<div id="slides" class="">
+		<div class="slides_container">
+        @foreach (var slide in @Model)
+        {
+			<div class="slide">
+				<a href="@slide.Link" title="@slide.Name" target="_blank">
+					<img src="@slide.Image" alt="@slide.Name">
+				</a>
+			</div>
+        }
+		</div>
+	</div>
+</div>

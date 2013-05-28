@@ -143,6 +143,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Mobile\Controllers\MainController.cs" />
     <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
+    <Compile Include="Areas\Service\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Service\ServiceAreaRegistration.cs" />
     <Compile Include="Controllers\AdminAreaController.cs" />
     <Compile Include="Controllers\AdminBannerImageController.cs" />
     <Compile Include="Controllers\AdminConferenceArticleController.cs" />
@@ -173,8 +175,9 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\Service1Controller.cs" />
     <Compile Include="Filters\AuthorizeFilterAttribute.cs" />
+    <Compile Include="Framework\ViewEngines\Razor\WebViewPage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1631,6 +1634,8 @@
     <Content Include="static\css\prettyPhoto.css" />
     <Content Include="static\css\product.css" />
     <Content Include="static\css\service\index.css" />
+    <Content Include="static\service\css\index.css" />
+    <Content Include="static\service\css\service.css" />
     <Content Include="static\css\shadows.css" />
     <Content Include="static\css\Site.css" />
     <Content Include="static\css\theme.css" />
@@ -3336,6 +3341,9 @@
     <Content Include="static\mobile\slider.js" />
     <Content Include="static\mobile\style.css" />
     <Content Include="static\mobile\swipe.js" />
+    <Content Include="static\service\img\nav_bg.png" />
+    <Content Include="static\service\img\nav_left.png" />
+    <Content Include="static\service\img\nav_right.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -3365,6 +3373,12 @@
     <Content Include="Areas\Mobile\Views\Shared\About.cshtml" />
     <Content Include="Areas\Mobile\Views\Main\Index.cshtml" />
     <Content Include="Areas\Mobile\Views\Shared\Carousel.cshtml" />
+    <Content Include="Areas\Service\Views\Web.config" />
+    <Content Include="Areas\Service\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Service\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Service\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Service\Views\Shared\Navigation.cshtml" />
+    <Content Include="Areas\Service\Views\Shared\Carousel.cshtml" />
     <None Include="static\css\icons\Thumbs.db" />
     <None Include="static\css\icons\vssver2.scc" />
     <None Include="static\css\img\Thumbs.db" />
@@ -3695,6 +3709,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Mobile\Models\" />
+    <Folder Include="Areas\Service\Models\" />
+    <Folder Include="static\css\service\css\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>

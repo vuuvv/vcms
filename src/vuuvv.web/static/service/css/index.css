@@ -1,0 +1,142 @@
+﻿.slides {
+	width: 980px;
+	height: 344px;
+	margin: 15px auto 0;
+	overflow: hidden;
+	position: relative;
+}
+
+#slides {
+	width: 980px;
+	height: 344px;
+	position: absolute;
+	left: 0;
+	top: 0;
+    z-index: 0;
+}
+
+.slide a {
+	display: block;
+	height: 344px;
+	overflow: hidden;
+}
+
+.slide img {
+	height: 344px;
+	width: 980px;
+    border: none;
+}
+
+.slides .pagination 
+{
+    position: absolute;
+    bottom: 14px;
+    right: 27px;
+    z-index: 1000;
+}
+
+.slides .pagination li 
+{
+    float: left;
+    margin: 0 3px;
+}
+
+.slides .pagination li a
+{
+    background: url(/static/service/img/paginator.gif) no-repeat;
+    display: block;
+    height: 15px;
+    width: 17px;
+    text-indent: -100000px;
+    overflow: hidden;
+    float: left;
+}
+
+.slides .pagination li.current a
+{
+    background: url(/static/service/img/paginator_h.gif) no-repeat;
+}
+
+
+.oldtonew .hd
+{
+    background: url(/static/service/img/oldtonew.png) no-repeat;
+}
+
+.oldtonew .bd 
+{
+    height: 256px;
+    padding: 10px 0 0 6px;
+}
+
+.oldtonew img
+{
+    border: none;
+    float: left;
+    display: block;
+}
+
+.oldtonew h1, .oldtonew p, .zc h1, .zc p, .hotlink a, .hotlink h1
+{
+    color: #5d5d5d;
+}
+
+.oldtonew h1 
+{
+    margin: 16px 0;
+}
+
+.oldtonew p 
+{
+    font-size: 18px;
+    _font-size: 16px;
+}
+
+.preorder 
+{
+    margin-top: 12px;
+    background: url(/static/service/img/preorder.gif) no-repeat;
+    display: block;
+    height: 32px;
+    width: 123px;
+    text-indent: -9999px;
+}
+
+.promo 
+{
+    background: url(/static/service/img/promo.png) no-repeat center left;
+    height: 159px;
+    width: 300px;
+}
+
+.zc 
+{
+    padding: 0 30px 22px 34px;
+    border-right: 3px dotted #818181;
+    border-left: 3px dotted #818181;
+}
+
+.zc h1 
+{
+    margin-bottom: 16px;
+}
+
+.hotlink 
+{
+    padding-left: 32px;
+    width: 280px;
+}
+
+.hotlink h1 
+{
+    padding-bottom: 7px;
+}
+
+.hotlink a
+{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    text-decoration: none;
+}
