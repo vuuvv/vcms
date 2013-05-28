@@ -1,7 +1,7 @@
-﻿@using vuuvv.Domain.Entities.Service;
+﻿@using vuuvv.web.Areas.Service.Models
 
 @{
-    var nav = (Navigation [])ViewBag.Nav;
+    var layout = (PageLayout)ViewBag.PageLayout;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@
 <body>
     <div class="w">
         <div class="head">
-            @Html.Partial("Navigation", nav)
+            @Html.Partial("Navigation", layout.Navigations)
         </div>
         <div class="main">
             @RenderBody()

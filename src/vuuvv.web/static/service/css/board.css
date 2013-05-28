@@ -1,0 +1,47 @@
+﻿.board 
+{
+    background: url(/static/service/img/board.jpg);
+    height: 303px;
+    width: 980px;
+}
+
+.hittopic, .policy
+{
+    width: 650px;
+}
+
+.hittopic .hd, .hotvideo  .hd
+{
+    height: 68px;
+    padding: 20px 0 0 80px;
+}
+
+.hittopic .hd
+{
+    background: url(../img/hittopic.png) no-repeat;
+}
+
+.hotvideo, .network
+{
+    width: 324px;
+    padding-left: 6px;
+}
+
+.hotvideo .hd, .network .hd, .policy .hd 
+{
+    padding-left: 0;
+}
+
+.hotvideo .hd .inner 
+{
+    background: #ff5b5b;
+}
+.policy .hd .inner  
+{
+    background: #718dbf;
+}
+.network .hd .inner 
+{
+    background: #39ad46;
+}
+

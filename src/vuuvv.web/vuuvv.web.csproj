@@ -143,7 +143,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Mobile\Controllers\MainController.cs" />
     <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
+    <Compile Include="Areas\Service\Controllers\BoardController.cs" />
     <Compile Include="Areas\Service\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Service\Models\CommunityViewModel.cs" />
+    <Compile Include="Areas\Service\Models\PageLayout.cs" />
     <Compile Include="Areas\Service\ServiceAreaRegistration.cs" />
     <Compile Include="Controllers\AdminAreaController.cs" />
     <Compile Include="Controllers\AdminBannerImageController.cs" />
@@ -1634,6 +1637,7 @@
     <Content Include="static\css\prettyPhoto.css" />
     <Content Include="static\css\product.css" />
     <Content Include="static\css\service\index.css" />
+    <Content Include="static\service\css\board.css" />
     <Content Include="static\service\css\index.css" />
     <Content Include="static\service\css\service.css" />
     <Content Include="static\css\shadows.css" />
@@ -3379,6 +3383,7 @@
     <Content Include="Areas\Service\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Service\Views\Shared\Navigation.cshtml" />
     <Content Include="Areas\Service\Views\Shared\Carousel.cshtml" />
+    <Content Include="Areas\Service\Views\Board\Index.cshtml" />
     <None Include="static\css\icons\Thumbs.db" />
     <None Include="static\css\icons\vssver2.scc" />
     <None Include="static\css\img\Thumbs.db" />
@@ -3709,7 +3714,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Mobile\Models\" />
-    <Folder Include="Areas\Service\Models\" />
     <Folder Include="static\css\service\css\" />
     <Folder Include="Views\Page\" />
   </ItemGroup>
