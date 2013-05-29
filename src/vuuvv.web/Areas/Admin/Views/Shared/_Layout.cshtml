@@ -1,0 +1,63 @@
+﻿@using Telerik.Web.Mvc;
+@using Telerik.Web.Mvc.UI;
+
+@{
+    string adminPageTitle = "";
+    if (String.IsNullOrWhiteSpace(ViewBag.Title))
+    {
+        adminPageTitle = ViewBag.Title + " / ";
+    }
+    adminPageTitle += "管理系统";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@adminPageTitle</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link href="~/content/admin/style.css" rel="Stylesheet" />
+    @RenderSection("ExtraCSS", "")
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("ExtraJS", "")
+</head>
+<body>
+    <div class="page">
+        <div class="header-menu">
+            @Html.Partial("HeaderMenu")
+        </div>
+        <div class="status-bar">
+            @DateTime.Now.ToString("f")
+        </div>
+        <div class="content">
+            @Html.Partial("Notifications")
+            <div class="inner">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="throbber">
+            <div class="curtain"></div>
+            <div class="curtain-content">
+                <div>
+                    <h1 class="throbber-header">Wait...</h1>
+                    <p>
+                        <img src="~/content/admin/images/throbber-synchronizing.gif" alt="" />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @(Html.Telerik().StyleSheetRegistrar()
+        .DefaultGroup(group => group
+            .Add("telerik.common.min.css")
+            .Add("telerik.vista.min.css")
+            .Add("telerik.rtl.min.css")
+     ))
+     @(Html.Telerik().ScriptRegistrar()
+        .jQuery(false)
+        .jQueryValidation(false)
+     )
+</body>
+</html>

@@ -1,0 +1,118 @@
+﻿body, h1, h2, h3, h4, h5, h6, address, blockquote, dd, dl, hr, form, input 
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    font-family: Arial, Verdana, helvetica, sans-serfif;
+    font-size: 12px;
+}
+
+hr 
+{
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+}
+
+label.forcheckbox 
+{
+    margin: 0 0 0 0.4em;
+    display: inline;
+}
+
+a 
+{
+    color: #009fff;
+    text-decoration: none;
+}
+
+a:hover 
+{
+    text-decoration: underline;
+    color: #009fff;
+}
+
+img 
+{
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+    font-family: Arial, helvetica, Sans-Serif;
+}
+
+h2, h3 
+{
+    font-size: 16px;
+}
+
+.header-menu 
+{
+    width: 100%;
+    background: url(images/admin-menu-bg.gif) repeat-x;
+    text-transform: capitalize;
+}
+
+.header-menu .t-menu .t-link
+{
+    padding: .6em .97em;
+}
+
+.header-menu .t-menu .t-arrow-next
+{
+    top: 7px;
+}
+
+.status-bar 
+{
+    background: #e7efef no-repeat;
+    border: solid 1px #acacac;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.content .inner
+{
+    padding: 20px 15px 5px;
+}
+
+.throbber-header
+{
+    font-size: 145%;
+}
+
+.throbber 
+{
+    display: none;
+}
+
+.throbber .curtain 
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3e4d45;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+.throbber .curtain-content
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.throbber .curtain-content
+{
+    text-align: center;
+    padding: 250px;
+    color: #fff;
+}
