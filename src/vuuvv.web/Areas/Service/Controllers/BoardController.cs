@@ -18,5 +18,10 @@ namespace vuuvv.web.Areas.Service.Controllers
             return View();
         }
 
+        public ActionResult HitTopic(int id)
+        {
+            ViewBag.PageLayout = PageLayout.Create();
+            return View();
+        }
     }
 }

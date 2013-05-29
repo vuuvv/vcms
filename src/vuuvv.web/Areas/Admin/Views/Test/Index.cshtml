@@ -1,0 +1,16 @@
+﻿@using vuuvv.web.Helper;
+
+@model System.Type[]
+
+<ul>
+@foreach (var t in Model)
+{
+    <li>@t.Name @t.Namespace</li>
+    <ul>
+        @foreach (var a in ActionHelper.GetAllAction(t))
+        {
+        <li>@a</li>
+        }
+    </ul>
+}
+</ul>

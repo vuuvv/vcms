@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body 
+{
+    font-family: 微软雅黑;
+}
+
 h1 
 {
     margin: 0;
@@ -13,6 +18,11 @@ h1
 ul, li 
 {
     list-style: none;
+}
+
+.clr 
+{
+    clear: both;
 }
 
 .w 

@@ -92,5 +92,14 @@ namespace vuuvv.web.Helper
             }
             return ret;
         }
+
+        public static Type[] GetAllSubClass(Type t, bool concret = true, bool containSelf=false)
+        {
+            var types = from a in AppDomain.CurrentDomain.GetAssemblies()
+                        from sub in a.GetTypes()
+                        where t.IsAssignableFrom(sub) && (concret ? !sub.IsAbstract : true) && (containSelf ? true : sub == t)
+                        select sub;
+            return types.ToArray();
+        }
     }
 }

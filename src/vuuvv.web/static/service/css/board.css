@@ -5,14 +5,19 @@
     width: 980px;
 }
 
-.hittopic, .policy
+.boards
+{
+    padding-bottom: 10px;
+}
+
+.boards .hittopic, .boards .policy
 {
     width: 650px;
 }
 
 .hittopic .hd, .hotvideo  .hd
 {
-    height: 68px;
+    height: 48px;
     padding: 20px 0 0 80px;
 }
 
@@ -21,7 +26,7 @@
     background: url(../img/hittopic.png) no-repeat;
 }
 
-.hotvideo, .network
+.boards .hotvideo, .boards .network
 {
     width: 324px;
     padding-left: 6px;
@@ -30,6 +35,11 @@
 .hotvideo .hd, .network .hd, .policy .hd 
 {
     padding-left: 0;
+}
+
+.network .hd, .policy .hd 
+{
+    padding-top: 10px;
 }
 
 .hotvideo .hd .inner 
@@ -45,3 +55,142 @@
     background: #39ad46;
 }
 
+.box .bd 
+{
+    background: #fff;
+}
+
+.bd ul li 
+{
+    background: url(../img/indicator.png) no-repeat left center;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 16px;
+    border-bottom: 1px dotted #d1d1d1;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    font-weight: bold;
+    position: relative;
+}
+
+.bd ul li a
+{
+    color: #5d5d5d;
+    text-decoration: none;
+}
+
+.bd ul li a:hover
+{
+    color: #333;
+}
+
+.bd ul li i 
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.hotvideo .bd .mainv
+{
+    width: 324px;
+    height: 192px;
+}
+
+.hotvideo .bd .img 
+{
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.img a 
+{
+    display: block;
+    background: url(../img/v-arrow-s.png) no-repeat right bottom;
+    _background: url(../img/v-arrow-s.gif) no-repeat right bottom;
+    width: 100%;
+    height: 100%;
+}
+
+.mainv a 
+{
+    background: url(../img/v-arrow.png) no-repeat center center;
+    _background: url(../img/v-arrow.gif) no-repeat center center;
+}
+
+.hotvideo ul 
+{
+    padding-top: 20px;
+}
+
+.hotvideo ul li 
+{
+    float: left;
+    border: none;
+    height: 60px;
+    width: 90px;
+    padding: 0;
+    margin: 0 6px;
+}
+
+.topic 
+{
+    padding: 30px 0;
+}
+
+.topic .left 
+{
+    height: 100%;
+    float: left;
+    width: 260px;
+}
+
+.topic .left ul li 
+{
+    background: url(../img/indicator.png) no-repeat 0 8px;
+    margin: 5px 0;
+    padding: 0 3px 0 15px;
+}
+
+.topic .left ul a 
+{
+    font-size: 13px;
+    text-decoration: none;
+    color: #5F5D5D;
+}
+
+
+.topic .left ul a:hover
+{
+    color: #333;
+}
+
+.topic .right
+{
+    width: 658px;
+    float: right;
+    padding: 0 30px;
+    border-left: 2px dotted #5d5d5d;
+}
+
+.topic .article 
+{
+    margin: 5px 0 20px;
+    color: #5d5d5d;
+}
+
+.topic .article-title
+{
+    padding: 10px 0;
+}
+
+.topic .article-title h1 
+{
+    font-size: 24px;
+    color: #5d5d5d;
+}
