@@ -3809,6 +3809,7 @@
     <Content Include="Areas\Service\Views\Board\HitTopic.cshtml" />
     <Content Include="Areas\Admin\Views\Web.config" />
     <Content Include="Areas\Admin\Views\Test\Index.cshtml" />
+    <Content Include="Areas\Admin\sitemap.config" />
     <None Include="static\css\icons\Thumbs.db" />
     <None Include="static\css\icons\vssver2.scc" />
     <None Include="static\css\img\Thumbs.db" />
